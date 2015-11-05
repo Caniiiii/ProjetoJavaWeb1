@@ -17,7 +17,7 @@ Tecnologias:
 Frameworks CSS:
 
 CSS Login:
-- http://seonglee.com/theme/authenty-v1.2/
+- http://seonglee.com/theme/authenty-v1.2/ (editado)
 
 CSS Sistema: 
 
