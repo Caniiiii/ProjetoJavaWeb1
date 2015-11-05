@@ -11,6 +11,8 @@ de Goiás que tem como objetivo facilitar o ato de gestão de patrimônio de uma
 Tecnologias:
 - Java Web
 - Maven
+- Hibernate
+- JSF
 
 Frameworks CSS:
 
