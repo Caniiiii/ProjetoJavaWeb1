@@ -1,0 +1,24 @@
+Página Cadastro de usuário(cadastro_user):
+  - Nome
+  - Email
+  - Tipo de usuário
+  
+Página Cadastro de categorias(cadastro_categ):
+  
+Página Cadastro de Produto de Patrimônio(cadastro):
+  - Código
+  - Número da plaqueta
+  - Data de compra
+  - Número da nota fiscal
+  - Tempo de garantia
+  - Nota fiscal(xml ou .pdf)
+  - Foto (.jpg)
+  - Descrição
+  - Fornecedor
+  - Unidade
+  - Departamento
+  - Categoria
+  - Observação
+  - Quantidade
+  - Situação(Novo, usado, etc...)
+  - Valor Unitário R$
