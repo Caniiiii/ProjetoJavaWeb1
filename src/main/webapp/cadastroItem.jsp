@@ -4,7 +4,7 @@
 <head>
 
 
-    <title>UFG - Sistema de gestão de património</title>
+    <title>Cadastro de Produto - Sistema de gestão de património</title>
 
 	<!-- CSSs -->
 	
@@ -38,7 +38,7 @@
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
-                <a class="navbar-brand" href="index.html">UFG - Sistema de gestão de património</a>
+				<a class="navbar-brand" href="index.html">UFG - Sistema de gestão de património</a>
             </div>
             <!-- /.navbar-header -->
 
