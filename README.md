@@ -20,6 +20,9 @@ Frameworks CSS:
 CSS Login:
 - http://seonglee.com/theme/authenty-v1.2/ (editado)
 
+CSS Theme:
+- http://startbootstrap.com/template-overviews/sb-admin-2/
+
 CSS Sistema: 
 
 *Para informações tecnicas do projeto, favor consultar o arquivo `DocumentodeRequisitosdeSoftware-ControlePatrimonio.docx` na pasta Projeto.
