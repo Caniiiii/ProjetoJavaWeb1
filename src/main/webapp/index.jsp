@@ -17,6 +17,9 @@
     <!-- Custom CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/startbootstrap-sb-admin-2/1.0.7/css/sb-admin-2.css" rel="stylesheet">
 
+    <!-- Custom2 CSS -->
+    <link href="http://www.icircuit.com.br/style.css" rel="stylesheet">
+
     <!-- Custom Fonts -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
@@ -36,9 +39,9 @@
     <div id="wrapper">
 
         <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <nav class="navbar navbar-topo navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
-                <a class="navbar-brand" href="index.html">UFG - Sistema de gestão de património</a>
+				<a class="navbar-brand" href="index.html">UFG - Sistema de gestão de património</a>
             </div>
             <!-- /.navbar-header -->
 
