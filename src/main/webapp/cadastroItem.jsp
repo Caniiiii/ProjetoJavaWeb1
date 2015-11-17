@@ -130,10 +130,10 @@
             <!-- /.navbar-static-side -->
         </nav>
 
-        <div id="page-wrapper">
+         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Forms</h1>
+                    <h1 class="page-header">Cadastro de Patrimônio</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -142,21 +142,85 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Basic Form Elements
+                            Incluir Patrimônio
                         </div>
                         <div class="panel-body">
-                           <div class="alert alert-success">
-                            Teste
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <form role="form">
+                                        <div class="form-group">
+                                            <label>Nome do item</label>
+                                            <input class="form-control" placeholder="Digite o nome do item">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Observação</label>
+                                            <textarea class="form-control" rows="3"></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-default">Enviar</button>
+                                        <button type="reset" class="btn btn-default">Resetar</button>
+                                    </form>
+                                </div>
+                                <!-- /.col-lg-6 (nested) -->
+                                <div class="col-lg-6">
+                                    <form role="form">
+                                                                                <div class="form-group">
+                                                                                
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                            <label>Multiple Selects</label>
+                                            <select multiple class="form-control">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                            </select>
+                                        </div>
+                                        
+                                    </form>
+                                    
+                                </div>
+                                <!-- /.col-lg-6 (nested) -->
+                                
+                                
+                                <div class="row">
+                <div class="col-lg-6">
+                                     
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            Imagem do produto
+                        </div>
+                        <div class="panel-body">
+                         <a href="#"><img src="http://prohabbo.com.br/media/uplouds/avatar/46e95190c7244d1685dcfce07524387f.jpg" width="150" height="150"/></a>\
+                        </div>
+                        <div class="panel-footer">
+                                 <div class="form-group">
+                                            <label>Enviar Arquivo</label>
+                                            <input type="file">
+                                        </div>
+                        </div>
+                    </div>
+                </div>
+                              
                             </div>
                             
-                            <div class="form-group">
-                            
-                            <label>teste</label>
-                                <input class="form-control"></input>
-                            <p class="help-block">Exemplo</p>
-                            </div>
                             
                             
+                        
+                            
+                            
+                            
+                            <!-- /.row (nested) -->
                         </div>
                         <!-- /.panel-body -->
                     </div>
@@ -167,6 +231,9 @@
             <!-- /.row -->
         </div>
         <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
 
     <!-- Scripts -->
         
