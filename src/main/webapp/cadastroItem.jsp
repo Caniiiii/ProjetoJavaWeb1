@@ -150,11 +150,35 @@
                                     <form role="form">
                                             <div class="form-group">
                                             <label>Código do item</label>
-                                            <input type= "number" class="form-control" placeholder="Digite o código do item">
+                                            <input type="number" class="form-control" placeholder="Digite o código do item">
                                         </div>
                                         <div class="form-group">
                                             <label>Nome do item</label>
                                             <input class="form-control" placeholder="Digite o nome do item">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Número da plaqueta</label>
+                                            <input type="number" class="form-control" placeholder="Número da plaqueta">
+                                        </div>
+                                         <div class="form-group">
+                                            <label>Data de compra</label>
+                                            <input type="date" class="form-control" placeholder="Data de compra">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Nota fiscal</label>
+                                            <input type="number" class="form-control" placeholder="Número da nota fiscal">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Tempo de garantia</label>
+                                            <select class="form-control">
+                                                <option>1 ano</option>
+                                                <option>2 anos</option>
+                                                <option>3 anos</option>
+                                                <option>4 anos</option>
+                                                <option>5 anos</option>
+                                                <option>Ilimitada</option>
+                                                <option>Sem garantia</option>
+                                            </select>
                                         </div>
                                         <div class="form-group">
                                             <label>Observação</label>
@@ -180,13 +204,26 @@
                         </div>
                         <div class="panel-footer">
                                  <div class="form-group">
-                                            <label>Enviar Arquivo</label>
+                                            <label>Enviar foto</label>
                                             <input type="file">
                                         </div>
+                                        
                         </div>
+                        
                     </div>
+                    
+                    <div class="panel panel-info">
+                    <div class="panel-heading">
+                            Arquivo nota fiscal
+                        </div>
+                        <div class="panel-footer">
+                    		<div class="form-group">
+                                            <label>Enviar .pdf nota fiscal</label>
+                                            <input type="file">
+                                        </div>
+                                        </div>
                 </div>
-
+</div>
                             <!-- /.row (nested) -->
                         </div>
                         <!-- /.panel-body -->
