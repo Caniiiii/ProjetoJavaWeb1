@@ -148,6 +148,10 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <form role="form">
+                                            <div class="form-group">
+                                            <label>Código do item</label>
+                                            <input type= "number" class="form-control" placeholder="Digite o código do item">
+                                        </div>
                                         <div class="form-group">
                                             <label>Nome do item</label>
                                             <input class="form-control" placeholder="Digite o nome do item">
@@ -160,40 +164,11 @@
                                         <button type="reset" class="btn btn-default">Resetar</button>
                                     </form>
                                 </div>
-                                <!-- /.col-lg-6 (nested) -->
-                                <div class="col-lg-6">
-                                    <form role="form">
-                                                                                <div class="form-group">
-                                                                                
-                                                                        
-                                                                        
-                                                                        
-                                                                        
-                                                                        
-                                                                        
-                                                                        
-                                                                        
-                                                                        
-                                                                        
-                                                                        
-                                                                        
-                                            <label>Multiple Selects</label>
-                                            <select multiple class="form-control">
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                            </select>
-                                        </div>
-                                        
-                                    </form>
-                                    
-                                </div>
+                              
                                 <!-- /.col-lg-6 (nested) -->
                                 
                                 
-                                <div class="row">
+                         
                 <div class="col-lg-6">
                                      
                     <div class="panel panel-info">
@@ -201,7 +176,7 @@
                             Imagem do produto
                         </div>
                         <div class="panel-body">
-                         <a href="#"><img src="http://prohabbo.com.br/media/uplouds/avatar/46e95190c7244d1685dcfce07524387f.jpg" width="150" height="150"/></a>\
+                         <center><a href="#"><img src="http://prohabbo.com.br/media/uplouds/avatar/46e95190c7244d1685dcfce07524387f.jpg" width="250" height="250" class="img-thumbnail"/></a></center>
                         </div>
                         <div class="panel-footer">
                                  <div class="form-group">
@@ -211,15 +186,7 @@
                         </div>
                     </div>
                 </div>
-                              
-                            </div>
-                            
-                            
-                            
-                        
-                            
-                            
-                            
+
                             <!-- /.row (nested) -->
                         </div>
                         <!-- /.panel-body -->
