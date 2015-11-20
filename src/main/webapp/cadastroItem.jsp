@@ -146,27 +146,87 @@
                         </div>
                         <div class="panel-body">
                             <div class="row">
-                                <div class="col-lg-6">
+                            
+                            
+                            
+                            <div class="col-lg-2">
                                     <form role="form">
-                                            <div class="form-group">
+                                    <div class="form-group">
                                             <label>Código do item</label>
                                             <input type="number" class="form-control" placeholder="Digite o código do item">
                                         </div>
+                                    </form>
+                                    </div>
+                                    
+                                    <div class="col-lg-2">
+                                    <form role="form">
+                                    <div class="form-group">
+                                            <label>N da plaqueta</label>
+                                            <input type="number" class="form-control" placeholder="Número da plaqueta">
+                                        </div>
+                                    </form>
+                                    </div>
+                                    
+                            	 <div class="col-lg-2">
+                                    <form role="form">
+                                    <div class="form-group">
+                                            <label>Data de Compra</label>
+                                            <input type="date" class="form-control" placeholder="Data de compra">
+                                        </div>
+                                    </form>
+                                    </div>
+                                    
+                                       </div>
+                           
+                            
+     
+                        
+                        
+                                                <div class="row">
+                            
+                                <div class="col-lg-4">
+                                    <form role="form">
+                                  <div class="form-group">
+                                            <label>N da nota</label>
+                                            <input type="number" class="form-control" placeholder="Digite o numero da nota">
+                                    </div>
+                                    </form>
+                                    </div>
+                                    
+                                    
+                                    
+                                     <div class="col-lg-2">
+                                    <form role="form">
+                                   <div class="form-group">
+                                            <label>Situação</label>
+                                            <select class="form-control">
+                                                <option>Novo</option>
+                                                <option>Usado</option>
+                                                <option>Perecível</option>
+                                            </select>
+                                        </div>
+                                    </form>
+                                    </div>
+                                    
+                                    
+                                    </div>
+                        
+                        
+                        
+                        
+                        
+                        
+                        <div class="row">
+                            
+                                <div class="col-lg-6">
+                                    <form role="form">
                                         <div class="form-group">
                                             <label>Nome do item</label>
                                             <input class="form-control" placeholder="Digite o nome do item">
                                         </div>
-                                        <div class="form-group">
-                                            <label>Número da plaqueta</label>
-                                            <input type="number" class="form-control" placeholder="Número da plaqueta">
-                                        </div>
-                                         <div class="form-group">
-                                            <label>Data de compra</label>
-                                            <input type="date" class="form-control" placeholder="Data de compra">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Nota fiscal</label>
-                                            <input type="number" class="form-control" placeholder="Número da nota fiscal">
+                                                                                <div class="form-group">
+                                            <label>Fabricante</label>
+                                            <input class="form-control" placeholder="Digite o nome do fabricante">
                                         </div>
                                         <div class="form-group">
                                             <label>Tempo de garantia</label>
@@ -180,6 +240,17 @@
                                                 <option>Sem garantia</option>
                                             </select>
                                         </div>
+                                                                                <div class="form-group">
+                                            <label>Categoria</label>
+                                            <select class="form-control">
+                                                <option>Eletronico</option>
+                                                <option>Mobilia</option>
+                                            </select>
+                                        </div>
+                                        
+                                                        
+    
+    
                                         <div class="form-group">
                                             <label>Observação</label>
                                             <textarea class="form-control" rows="3"></textarea>
@@ -200,7 +271,7 @@
                             Imagem do produto
                         </div>
                         <div class="panel-body">
-                         <center><a href="#"><img src="http://prohabbo.com.br/media/uplouds/avatar/46e95190c7244d1685dcfce07524387f.jpg" width="250" height="250" class="img-thumbnail"/></a></center>
+                         <center><a href="#"><img src="http://iacom.s8.com.br/produtos/01/00/item/111804/8/111804870G1.jpg" width="250" height="250" class="img-thumbnail"/></a></center>
                         </div>
                         <div class="panel-footer">
                                  <div class="form-group">
