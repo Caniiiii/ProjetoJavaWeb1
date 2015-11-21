@@ -332,3 +332,6 @@
 </body>
 
 </html>
+
+    Status API Training Shop Blog About Pricing 
+
