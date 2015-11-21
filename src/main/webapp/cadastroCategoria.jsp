@@ -159,233 +159,106 @@
 
 			<div class="row">
 				<div class="col-lg-12">
-					<h1 class="page-header">Cadastro de Patrimônio</h1>
+					<h1 class="page-header">Cadastro de Categoria</h1>
 				</div>
 			</div>
 
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="panel panel-default">
-						<div class="panel-heading">Incluir Patrimônio</div>
-						<div class="panel-body">
-								<div class="row">
-								<div class="col-md-12">
-									<div class="row">
-										<div class="col-lg-6">
-											<div class="row">
-												<div class="col-lg-4">
-													<form role="form">
-														<div class="form-group">
+						<div class="panel-heading">Pesquisa de Categoria</div>
+							<div class="panel-body">
+							
+<div class="form-group input-group">
+                                            <input type="text" class="form-control" placeholder="Digite um Categoria para busca">
+                                            <span class="input-group-btn" >
+                                                <button class="btn btn-default" type="button"><i class="fa fa-search" ></i>
+                                                </button>
+                                            </span>
 
-															<label>Código do item</label> <input type="number"
-																class="form-control"
-																placeholder="Digite o código do item">
-														</div>
-													</form>
-													
-													
-													
-													
-													
-													
-	
-													
-													
-													
-													
-													
-													
-													
-													
-												</div>
-												<div class="col-lg-4">
-													<form role="form">
-														<div class="form-group">
 
-															<label>N da plaqueta</label> <input type="number"
-																class="form-control" placeholder="Número da plaqueta">
-														</div>
 
-													</form>
-												</div>
-													
-												<div class="col-lg-4">
-													<form role="form">
-														<div class="form-group">
 
-															<label>Data de Compra</label> <input type="date"
-																class="form-control" placeholder="Data de compra">
-														</div>
-
-													</form>
-												</div>
-											</div>
-
-											<div class="row">
-												<div class="col-lg-4">
-													<form role="form">
-														<div class="form-group">
-															<label>N da nota</label> <input type="number"
-																class="form-control"
-																placeholder="Digite o numero da nota">
-														</div>
-													</form>
-
-												</div>
-												
-												
-												
-												
-												
-												
-	
-												
-												
-												
-												
-												
-												
-												
-												
-												
-												
-												<div class="col-lg-4">
-													<form role="form">
-														<div class="form-group">
-															<label>Quantidade</label> <input type="number"
-																class="form-control"
-																placeholder="Digite a quantidade de itens">
-														</div>
-													</form>
-
-												</div>
-												<div class="col-lg-4">
+							
+					</div>
+			
 
 													<form role="form">
 														<div class="form-group">
-															<label>Situação</label> <select class="form-control">
-																<option>Novo</option>
-																<option>Usado</option>
-																<option>Perecível</option>
+															<label>Listar Categorias cadastrados</label> <select class="form-control">
+																<option>Eletronico</option>
+																<option>Mobilia</option>
 															</select>
 														</div>
 													</form>
-												</div>
-											</div>
-
-
-
-											<form role="form">
-												<div class="form-group">
-													<label>Nome do item</label> <input class="form-control"
-														placeholder="Digite o nome do item">
-												</div>
+											
 												
 												
-												<div class="form-group">
-													<label>Fábricante</label> <select
-														class="form-control">
-														<option>Apple</option>
-														<option>LG</option>
-														<option>Outros</option>
-													</select>
-												</div>
-												<div class="form-group">
-													<label>Tempo de garantia</label> <select
-														class="form-control">
-														<option>1 ano</option>
-														<option>2 anos</option>
-														<option>3 anos</option>
-														<option>4 anos</option>
-														<option>5 anos</option>
-														<option>Ilimitada</option>
-														<option>Sem garantia</option>
-													</select>
-												</div>
-												<div class="form-group">
-													<label>Categoria</label> <select class="form-control">
-														<option>Eletronico</option>
-														<option>Mobilia</option>
-													</select>
-												</div>
-												<div class="form-group">
-													<label>Unidade</label> <select class="form-control">
-														<option>Goiânia - Setor Sul</option>
-														<option>Goiânia - T10</option>
-														<option>Anápolis</option>
-													</select>
-												</div>
-												<div class="form-group">
-													<label>Departamento</label> <select class="form-control">
-														<option>Financeiro</option>
-														<option>Assistência</option>
-														<option>Salão</option>
-													</select>
-												</div>
-												<div class="form-group">
-													<label>Responsável</label> <input class="form-control"
-														placeholder="Digite o responsável pelo equipamento caso exista">
-												</div>
-												<div class="form-group">
-													<label>Observação</label>
-													<textarea class="form-control" rows="3"></textarea>
-												</div>
-											</form>
-										</div>
-										<div class="col-lg-6">
-
-											<div class="panel panel-info">
-												<div class="panel-heading">Imagem do produto</div>
-												<div class="panel-body">
-													<center>
-														<a href="#"><img
-															src="http://iacom.s8.com.br/produtos/01/00/item/111804/8/111804870G1.jpg"
-															width="250" height="250" class="img-thumbnail" /></a>
-													</center>
-												</div>
-												<div class="panel-footer">
-													<div class="form-group">
-														<label>Enviar foto</label> <input type="file">
-													</div>
-
-												</div>
-
-											</div>
-
-											<div class="panel panel-info">
-												<div class="panel-heading">Arquivo nota fiscal</div>
-												<div class="panel-footer">
-													<div class="form-group">
-														<label>Enviar .pdf nota fiscal</label> <input type="file">
-													</div>
-												</div>
-											</div>
-											<button type="submit" class="btn btn-default">Enviar</button>
-												<button type="reset" class="btn btn-default">Resetar</button>
-												<button type="submit" class="btn btn-default">Editar</button>
-										</div>
-
-									</div>
-								</div>
-							</div>
-
-						</div>
-					</div>
 				</div>
 			</div>
 
-
+</div>
 
 
 
 
 
 		</div>
+		
+		
+		
+		
+		
+		<div class="row">
+				<div class="col-lg-12">
+					<div class="panel panel-default">
+						<div class="panel-heading">Cadastrar novo Categoria</div>
+							<div class="panel-body">
+								<div class="row">
+								<div class="col-md-12">
+								
+										
+												
+									<form role="form">
+												<div class="form-group">
+													<label>Nome do Categoria</label> <input class="form-control"
+														placeholder="Digite o nome do Categoria" type="text">
+												</div>
+												<div class="form-group">
+													<label>Endereço</label> <input class="form-control"
+														placeholder="Digite o endereço do Categoria" type="text">
+												</div>
+												
+												<div class="form-group">
+													<label>Telefone</label> <input class="form-control"
+														placeholder="Digite o telefone do Categoria" type="number">
+												</div>
+												<div class="form-group">
+													<label>Site</label> <input class="form-control"
+														placeholder="Digite o site do Categoria" type="text">
+												</div>
+												<div class="form-group">
+													<label>Observação</label>
+													<textarea class="form-control" rows="3"></textarea>
+												</div>
+												<button type="submit" class="btn btn-default">Enviar</button>
+												<button type="reset" class="btn btn-default">Resetar</button>
+												<button type="submit" class="btn btn-default">Editar</button>
+										</form>
+											
+						
+
+						</div>
+							</div>
+								</div>
+									</div>
+										</div>
+											</div>
+												</div>
 		<!-- /#wrapper -->
 
 		<!-- Scripts -->
 
-	</div>
 	<!-- /#wrapper -->
 
 	<!-- jQuery -->

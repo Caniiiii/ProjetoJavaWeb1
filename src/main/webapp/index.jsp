@@ -41,7 +41,7 @@
         <!-- Navigation -->
         <nav class="navbar navbar-topo navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
-				<a class="navbar-brand" href="index.html">UFG - Sistema de gestão de património</a>
+				<a class="navbar-brand" href="index.jsp">UFG - Sistema de gestão de património</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -86,7 +86,7 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-plus-circle fa-fw"></i>Cadastrar Itens</a>
+                            <a href="cadastroItem.jsp"><i class="fa fa-plus-circle fa-fw"></i>Cadastrar Itens</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-search  fa-fw"></i>Visualizar Itens<span class="fa arrow"></span></a>
@@ -104,8 +104,20 @@
                             <!-- /.nav-second-level -->
                         </li>
                         
-                        <li>
-                            <a href="#"><i class="fa fa-tags  fa-fw"></i>Cadastrar Categorias</a>
+                          <li>
+                            <a href="#"><i class="fa fa-tags  fa-fw"></i>Cadastros Gerais<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="cadastroCategoria.jsp"><i class="fa fa-desktop fa-fw"></i>Cadastrar Categoria</a>
+                                </li>
+                                <li>
+                                    <a href="cadastroDepartamento.jsp"><i class="fa fa-external-link fa-fw"></i>Cadastrar Departamento</a>
+                                </li>
+                                                                <li>
+                                    <a href="cadastroUnidade.jsp"><i class="fa fa-institution fa-fw"></i>Cadastrar Unidade</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
                         </li>
                         
                         <li>
