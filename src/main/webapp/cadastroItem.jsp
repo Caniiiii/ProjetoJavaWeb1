@@ -168,12 +168,23 @@
 											</div>
 
 											<div class="row">
-												<div class="col-lg-8">
+												<div class="col-lg-4">
 													<form role="form">
 														<div class="form-group">
 															<label>N da nota</label> <input type="number"
 																class="form-control"
 																placeholder="Digite o numero da nota">
+														</div>
+													</form>
+
+												</div>
+												
+												<div class="col-lg-4">
+													<form role="form">
+														<div class="form-group">
+															<label>Quantidade</label> <input type="number"
+																class="form-control"
+																placeholder="Digite a quantidade de itens">
 														</div>
 													</form>
 
@@ -199,6 +210,8 @@
 													<label>Nome do item</label> <input class="form-control"
 														placeholder="Digite o nome do item">
 												</div>
+												
+												
 												<div class="form-group">
 													<label>Fábricante</label> <select
 														class="form-control">
