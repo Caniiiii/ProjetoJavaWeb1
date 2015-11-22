@@ -5,8 +5,7 @@ Projeto: Sistema Web de Gestão de Patrimônio
 
 Sistema:
 	
-O Projeto de um sistema web para gestão de patrimônio, desenvolvido por alunos do curso de Sistemas de Informação da Universidade Federal
-de Goiás que tem como objetivo facilitar o ato de gestão de patrimônio de uma empresa, usando tecnologias de desenvolvimento Web.
+O Projeto de um sistema web para gestão de patrimônio, desenvolvido por alunos do curso de Sistemas de Informação da Universidade Federal de Goiás que tem como objetivo facilitar o ato de gestão de patrimônio de uma empresa, usando tecnologias de desenvolvimento Web.
 
 Tecnologias:
 - Java Web
@@ -14,6 +13,7 @@ Tecnologias:
 - Hibernate
 - JSF
 - TomCat
+- JQuery
 
 Frameworks CSS:
 
@@ -23,6 +23,7 @@ CSS Login:
 CSS Theme:
 - http://startbootstrap.com/template-overviews/sb-admin-2/
 
-CSS Sistema: 
+Framework de geração de raws para Bootstrap:
+- http://www.layoutit.com/build
 
 *Para informações tecnicas do projeto, favor consultar o arquivo `DocumentodeRequisitosdeSoftware-ControlePatrimonio.docx` na pasta Projeto.
