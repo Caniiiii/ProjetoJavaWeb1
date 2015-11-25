@@ -90,8 +90,8 @@
 						</li>
 						<li><a href="cadastroItem.jsp"><i
 								class="fa fa-plus-circle fa-fw"></i>Cadastrar Itens</a></li>
-						
-<li><a href="#"><i class="fa fa-search  fa-fw"></i>Visualizar Itens<span class="fa arrow"></span></a>
+						<li><a href="#"><i class="fa fa-search  fa-fw"></i>Visualizar
+								Itens<span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
 								<li><a href="visualizarItemGeral.jsp"><i
 										class="fa fa-copy fa-fw"></i>Itens Gerais</a></li>
@@ -127,26 +127,13 @@
 				<!-- /.sidebar-collapse -->
 			</div>
 			<!-- /.navbar-static-side -->
-
 		</nav>
-
-
-
 		<div id="page-wrapper">
-
-
-
-
-
-
-
-
 			<div class="row">
 				<div class="col-lg-12">
 					<h1 class="page-header">Cadastro de Departamento</h1>
 				</div>
 			</div>
-
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="panel panel-green">
@@ -161,14 +148,7 @@
 										<i class="fa fa-search"></i>
 									</button>
 								</span>
-
-
-
-
-
 							</div>
-
-
 							<form role="form">
 								<div class="form-group">
 									<label>Listar Departamentos cadastrados</label> <select
@@ -179,24 +159,10 @@
 									</select>
 								</div>
 							</form>
-
-
-
 						</div>
 					</div>
-
 				</div>
-
-
-
-
-
 			</div>
-
-
-
-
-
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="panel panel-primary">
@@ -204,9 +170,6 @@
 						<div class="panel-body">
 							<div class="row">
 								<div class="col-md-12">
-
-
-
 									<form role="form">
 										<div class="form-group">
 											<label>Nome do Departamento</label> <input
@@ -226,9 +189,6 @@
 										<button type="reset" class="btn btn-outline btn-warning">Editar</button>
 										<button type="submit" class="btn btn-outline btn-danger">Apagar</button>
 									</form>
-
-
-
 								</div>
 							</div>
 						</div>
@@ -262,5 +222,4 @@
 
 		<!-- /End Scripts -->
 </body>
-
 </html>

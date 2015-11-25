@@ -90,8 +90,9 @@
 						</li>
 						<li><a href="cadastroItem.jsp"><i
 								class="fa fa-plus-circle fa-fw"></i>Cadastrar Itens</a></li>
-						
-						<li><a href="#"><i class="fa fa-search  fa-fw"></i>Visualizar Itens<span class="fa arrow"></span></a>
+
+						<li><a href="#"><i class="fa fa-search  fa-fw"></i>Visualizar
+								Itens<span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
 								<li><a href="visualizarItemGeral.jsp"><i
 										class="fa fa-copy fa-fw"></i>Itens Gerais</a></li>
@@ -154,22 +155,8 @@
 																placeholder="Digite o código do item">
 														</div>
 													</form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 												</div>
+
 												<div class="col-lg-4">
 													<form role="form">
 														<div class="form-group">
@@ -177,7 +164,6 @@
 															<label>N da plaqueta</label> <input type="number"
 																class="form-control" placeholder="Número da plaqueta">
 														</div>
-
 													</form>
 												</div>
 
@@ -188,7 +174,6 @@
 															<label>Data de Compra</label> <input type="date"
 																class="form-control" placeholder="Data de compra">
 														</div>
-
 													</form>
 												</div>
 											</div>
@@ -202,24 +187,7 @@
 																placeholder="Digite o numero da nota">
 														</div>
 													</form>
-
 												</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 												<div class="col-lg-4">
 													<form role="form">
@@ -245,14 +213,11 @@
 												</div>
 											</div>
 
-
-
 											<form role="form">
 												<div class="form-group">
 													<label>Nome do item</label> <input class="form-control"
 														placeholder="Digite o nome do item">
 												</div>
-
 
 												<div class="form-group">
 													<label>Fábricante</label> <select class="form-control">
@@ -318,9 +283,7 @@
 													<div class="form-group">
 														<label>Enviar foto</label> <input type="file">
 													</div>
-
 												</div>
-
 											</div>
 
 											<div class="panel panel-info">
@@ -334,22 +297,13 @@
 											<button type="submit" class="btn btn-outline btn-success">Enviar</button>
 											<button type="reset" class="btn btn-outline btn-warning">Resetar</button>
 										</div>
-
 									</div>
 								</div>
 							</div>
-
 						</div>
 					</div>
 				</div>
 			</div>
-
-
-
-
-
-
-
 		</div>
 		<!-- /#wrapper -->
 
@@ -382,5 +336,4 @@
 
 
 </body>
-
 </html>

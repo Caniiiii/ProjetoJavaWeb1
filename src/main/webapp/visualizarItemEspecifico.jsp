@@ -90,8 +90,9 @@
 						</li>
 						<li><a href="cadastroItem.jsp"><i
 								class="fa fa-plus-circle fa-fw"></i>Cadastrar Itens</a></li>
-						
-<li><a href="#"><i class="fa fa-search  fa-fw"></i>Visualizar Itens<span class="fa arrow"></span></a>
+
+						<li><a href="#"><i class="fa fa-search  fa-fw"></i>Visualizar
+								Itens<span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
 								<li><a href="visualizarItemGeral.jsp"><i
 										class="fa fa-copy fa-fw"></i>Itens Gerais</a></li>
@@ -130,14 +131,6 @@
 		</nav>
 
 		<div id="page-wrapper">
-
-
-
-
-
-
-
-
 			<div class="row">
 				<div class="col-lg-12">
 					<h1 class="page-header">Visualizar Item Especifico</h1>
@@ -149,58 +142,39 @@
 					<div class="panel panel-green">
 						<div class="panel-heading">Pesquisa de Itens</div>
 						<div class="panel-body">
-						
+
 							<label>Nome do item</label>
 							<div class="form-group input-group">
-								<input type="text"
-									class="form-control"
+								<input type="text" class="form-control"
 									placeholder="Digite o nome de um item para busca"> <span
 									class="input-group-btn">
 									<button class="btn btn-default" type="button">
 										<i class="fa fa-search"></i>
 									</button>
 								</span>
-
-
-
-
-
 							</div>
-
-
 
 							<label>Código do item</label>
 							<div class="form-group input-group">
-							<input type="number"
-									class="form-control" placeholder="Digite um código para busca">
-								<span class="input-group-btn">
+								<input type="number" class="form-control"
+									placeholder="Digite um código para busca"> <span
+									class="input-group-btn">
 									<button class="btn btn-default" type="button">
 										<i class="fa fa-search"></i>
 									</button>
 								</span>
-
-
-
-
-
 							</div>
-							
+
 							<label>Numero da plaqueta</label>
 							<div class="form-group input-group">
-							<input type="number"
-									class="form-control" placeholder="Digite o número da plaqueta para busca">
-								<span class="input-group-btn">
+								<input type="number" class="form-control"
+									placeholder="Digite o número da plaqueta para busca"> <span
+									class="input-group-btn">
 									<button class="btn btn-default" type="button">
 										<i class="fa fa-search"></i>
 									</button>
 								</span>
-
-
-
-
-
 							</div>
-
 
 							<form role="form">
 
@@ -227,28 +201,13 @@
 										<option>Financeiro</option>
 										<option>Assistência</option>
 										<option>Salão</option>
-
 									</select>
 								</div>
 							</form>
-
-
-
-
 						</div>
 					</div>
-
 				</div>
-
-
-
-
-
 			</div>
-
-
-
-
 
 			<div class="row">
 				<div class="col-lg-12">
@@ -257,25 +216,14 @@
 						<div class="panel-body">
 							<div class="row">
 								<div class="col-md-12">
-
-
-
 									<form role="form">
-
 										<button type="submit" class="btn btn-outline btn-success">Buscar</button>
 										<button type="reset" class="btn btn-outline btn-warning">Limpar</button>
 										<button type="submit" class="btn btn-outline btn-danger">Apagar</button>
 									</form>
-
-
-
-
-
-
 								</div>
 							</div>
 						</div>
-
 					</div>
 				</div>
 			</div>
@@ -306,5 +254,4 @@
 
 		<!-- /End Scripts -->
 </body>
-
 </html>

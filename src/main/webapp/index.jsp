@@ -89,8 +89,9 @@
 						</li>
 						<li><a href="cadastroItem.jsp"><i
 								class="fa fa-plus-circle fa-fw"></i>Cadastrar Itens</a></li>
-						
-<li><a href="#"><i class="fa fa-search  fa-fw"></i>Visualizar Itens<span class="fa arrow"></span></a>
+
+						<li><a href="#"><i class="fa fa-search  fa-fw"></i>Visualizar
+								Itens<span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
 								<li><a href="visualizarItemGeral.jsp"><i
 										class="fa fa-copy fa-fw"></i>Itens Gerais</a></li>
@@ -148,8 +149,6 @@
 								<label>teste</label> <input class="form-control"></input>
 								<p class="help-block">Exemplo</p>
 							</div>
-
-
 						</div>
 						<!-- /.panel-body -->
 					</div>
@@ -185,5 +184,4 @@
 	<!-- /End Scripts -->
 
 </body>
-
 </html>

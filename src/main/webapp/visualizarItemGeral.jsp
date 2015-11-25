@@ -90,8 +90,9 @@
 						</li>
 						<li><a href="cadastroItem.jsp"><i
 								class="fa fa-plus-circle fa-fw"></i>Cadastrar Itens</a></li>
-						
-						<li><a href="#"><i class="fa fa-search  fa-fw"></i>Visualizar Itens<span class="fa arrow"></span></a>
+
+						<li><a href="#"><i class="fa fa-search  fa-fw"></i>Visualizar
+								Itens<span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
 								<li><a href="visualizarItemGeral.jsp"><i
 										class="fa fa-copy fa-fw"></i>Itens Gerais</a></li>
@@ -130,14 +131,6 @@
 		</nav>
 
 		<div id="page-wrapper">
-
-
-
-
-
-
-
-
 			<div class="row">
 				<div class="col-lg-12">
 					<h1 class="page-header">Visualizar Item Geral</h1>
@@ -158,13 +151,7 @@
 										<i class="fa fa-search"></i>
 									</button>
 								</span>
-
-
-
-
-
 							</div>
-
 
 							<div class="form-group input-group">
 								<input type="number" class="form-control"
@@ -174,29 +161,11 @@
 										<i class="fa fa-search"></i>
 									</button>
 								</span>
-
-
-
-
-
 							</div>
-
-
-
 						</div>
 					</div>
-
 				</div>
-
-
-
-
-
 			</div>
-
-
-
-
 
 			<div class="row">
 				<div class="col-lg-12">
@@ -205,8 +174,6 @@
 						<div class="panel-body">
 							<div class="row">
 								<div class="col-md-12">
-
-
 
 									<div class="row">
 										<div class="col-lg-6">
@@ -220,30 +187,10 @@
 																placeholder="Digite o código do item">
 														</div>
 													</form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 												</div>
-
-
 											</div>
 
 											<div class="row"></div>
-
-
-
 											<form role="form">
 												<div class="form-group">
 													<label>Nome do item</label> <input class="form-control"
@@ -297,19 +244,13 @@
 													<div class="form-group">
 														<label>Enviar foto</label> <input type="file">
 													</div>
-
 												</div>
-
 											</div>
 											<button type="submit" class="btn btn-outline btn-success">Enviar</button>
 											<button type="reset" class="btn btn-outline btn-warning">Resetar</button>
 											<button type="submit" class="btn btn-outline btn-danger">Editar</button>
 										</div>
-
 									</div>
-
-
-
 								</div>
 							</div>
 						</div>
@@ -343,5 +284,4 @@
 
 		<!-- /End Scripts -->
 </body>
-
 </html>
