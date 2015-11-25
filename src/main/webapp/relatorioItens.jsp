@@ -3,7 +3,7 @@
 
 <head>
 
-<title>UFG - Sistema de gestão de património</title>
+<title>Cadastro de Produto - Sistema de gestão de património</title>
 
 <!-- CSSs -->
 
@@ -26,6 +26,7 @@
 <!-- Custom Fonts -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -90,7 +91,7 @@
 						<li><a href="cadastroItem.jsp"><i
 								class="fa fa-plus-circle fa-fw"></i>Cadastrar Itens</a></li>
 						
-<li><a href="#"><i class="fa fa-search  fa-fw"></i>Visualizar Itens<span class="fa arrow"></span></a>
+						<li><a href="#"><i class="fa fa-search  fa-fw"></i>Visualizar Itens<span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
 								<li><a href="visualizarItemGeral.jsp"><i
 										class="fa fa-copy fa-fw"></i>Itens Gerais</a></li>
@@ -129,61 +130,165 @@
 		</nav>
 
 		<div id="page-wrapper">
+
+
+
+
+
+
+
+
 			<div class="row">
 				<div class="col-lg-12">
-					<h1 class="page-header">Forms</h1>
+					<h1 class="page-header">Relatório de Itens</h1>
 				</div>
-				<!-- /.col-lg-12 -->
 			</div>
-			<!-- /.row -->
+
 			<div class="row">
 				<div class="col-lg-12">
-					<div class="panel panel-default">
-						<div class="panel-heading">Basic Form Elements</div>
+					<div class="panel panel-green">
+						<div class="panel-heading">Pesquisa de Itens</div>
 						<div class="panel-body">
-							<div class="alert alert-success">Teste</div>
+						
+							<label>Nome do item</label>
+							<div class="form-group input-group">
+								<input type="text"
+									class="form-control"
+									placeholder="Digite o nome de um item para busca"> <span
+									class="input-group-btn">
+									<button class="btn btn-default" type="button">
+										<i class="fa fa-search"></i>
+									</button>
+								</span>
 
-							<div class="form-group">
 
-								<label>teste</label> <input class="form-control"></input>
-								<p class="help-block">Exemplo</p>
+
+
+
 							</div>
 
 
+
+							<label>Código do item</label>
+							<div class="form-group input-group">
+							<input type="number"
+									class="form-control" placeholder="Digite um código para busca">
+								<span class="input-group-btn">
+									<button class="btn btn-default" type="button">
+										<i class="fa fa-search"></i>
+									</button>
+								</span>
+
+
+
+
+
+							</div>
+
+
+							<form role="form">
+
+								<div class="form-group">
+									<label>Categoria</label> <select class="form-control">
+										<option>Todas</option>
+										<option>Eletronico</option>
+										<option>Mobilia</option>
+
+									</select>
+								</div>
+								<div class="form-group">
+									<label>Unidade</label> <select class="form-control">
+										<option>Todas</option>
+										<option>Goiânia - Setor Sul</option>
+										<option>Goiânia - T10</option>
+										<option>Anápolis</option>
+
+									</select>
+								</div>
+								<div class="form-group">
+									<label>Departamento</label> <select class="form-control">
+										<option>Todas</option>
+										<option>Financeiro</option>
+										<option>Assistência</option>
+										<option>Salão</option>
+
+									</select>
+								</div>
+							</form>
+
+
+
+
 						</div>
-						<!-- /.panel-body -->
 					</div>
-					<!-- /.panel -->
+
 				</div>
-				<!-- /.col-lg-12 -->
+
+
+
+
+
 			</div>
-			<!-- /.row -->
+
+
+
+
+
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="panel panel-primary">
+						<div class="panel-heading">Lista de Itens</div>
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-md-12">
+
+
+
+									<form role="form">
+
+										<button type="submit" class="btn btn-outline btn-success">Buscar</button>
+										<button type="reset" class="btn btn-outline btn-warning">Limpar</button>
+										<button type="submit" class="btn btn-outline btn-danger">Apagar</button>
+									</form>
+
+
+
+
+
+
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
 		</div>
-		<!-- /#page-wrapper -->
+		<!-- /#wrapper -->
 
 		<!-- Scripts -->
 
-	</div>
-	<!-- /#wrapper -->
+		<!-- /#wrapper -->
 
-	<!-- jQuery -->
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+		<!-- jQuery -->
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
 
-	<!-- Bootstrap Core JavaScript -->
-	<script
-		src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<!-- Bootstrap Core JavaScript -->
+		<script
+			src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-	<!-- Metis Menu Plugin JavaScript -->
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/metisMenu/2.2.0/metisMenu.min.js"></script>
+		<!-- Metis Menu Plugin JavaScript -->
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/metisMenu/2.2.0/metisMenu.min.js"></script>
 
-	<!-- Custom Theme JavaScript -->
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/startbootstrap-sb-admin-2/1.0.7/js/sb-admin-2.js"></script>
+		<!-- Custom Theme JavaScript -->
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/startbootstrap-sb-admin-2/1.0.7/js/sb-admin-2.js"></script>
 
-	<!-- /End Scripts -->
 
+
+		<!-- /End Scripts -->
 </body>
 
 </html>

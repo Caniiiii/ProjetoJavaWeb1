@@ -91,7 +91,7 @@
 						<li><a href="cadastroItem.jsp"><i
 								class="fa fa-plus-circle fa-fw"></i>Cadastrar Itens</a></li>
 						
-<li><a href="#"><i class="fa fa-search  fa-fw"></i>Visualizar Itens<span class="fa arrow"></span></a>
+						<li><a href="#"><i class="fa fa-search  fa-fw"></i>Visualizar Itens<span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
 								<li><a href="visualizarItemGeral.jsp"><i
 										class="fa fa-copy fa-fw"></i>Itens Gerais</a></li>
@@ -115,22 +115,19 @@
 						<li><a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Relatórios<span
 								class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
-								<li><a href="relatorioItens.jsp"><i
-										class="fa fa-desktop fa-fw"></i>Relatório de itens</a></li>
+								<li><a href="#"><i class="fa fa-desktop fa-fw"></i>Relatório
+										por Categorias</a></li>
 								<li><a href="#"><i class="fa fa-external-link fa-fw"></i>Relatório
-										2</a></li>
+										por Departamento</a></li>
 								<li><a href="#"><i class="fa fa-institution fa-fw"></i>Relatório
-										3</a></li>
+										por Unidades</a></li>
 							</ul> <!-- /.nav-second-level --></li>
 					</ul>
 				</div>
 				<!-- /.sidebar-collapse -->
 			</div>
 			<!-- /.navbar-static-side -->
-
 		</nav>
-
-
 
 		<div id="page-wrapper">
 
@@ -143,19 +140,19 @@
 
 			<div class="row">
 				<div class="col-lg-12">
-					<h1 class="page-header">Cadastro de Departamento</h1>
+					<h1 class="page-header">Visualizar Item Geral</h1>
 				</div>
 			</div>
 
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="panel panel-green">
-						<div class="panel-heading">Pesquisa de Departamento</div>
+						<div class="panel-heading">Pesquisa de Item Geral</div>
 						<div class="panel-body">
 
 							<div class="form-group input-group">
 								<input type="text" class="form-control"
-									placeholder="Digite um Departamento para busca"> <span
+									placeholder="Digite o nome de um item para busca"> <span
 									class="input-group-btn">
 									<button class="btn btn-default" type="button">
 										<i class="fa fa-search"></i>
@@ -169,16 +166,20 @@
 							</div>
 
 
-							<form role="form">
-								<div class="form-group">
-									<label>Listar Departamentos cadastrados</label> <select
-										class="form-control">
-										<option>Financeiro</option>
-										<option>Assistência</option>
-										<option>Salão</option>
-									</select>
-								</div>
-							</form>
+							<div class="form-group input-group">
+								<input type="number" class="form-control"
+									placeholder="Digite um código para busca"> <span
+									class="input-group-btn">
+									<button class="btn btn-default" type="button">
+										<i class="fa fa-search"></i>
+									</button>
+								</span>
+
+
+
+
+
+							</div>
 
 
 
@@ -200,32 +201,112 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="panel panel-primary">
-						<div class="panel-heading">Cadastrar novo Departamento</div>
+						<div class="panel-heading">Informações do Item</div>
 						<div class="panel-body">
 							<div class="row">
 								<div class="col-md-12">
 
 
 
-									<form role="form">
-										<div class="form-group">
-											<label>Nome do Departamento</label> <input
-												class="form-control"
-												placeholder="Digite o nome do Departamento" type="text">
+									<div class="row">
+										<div class="col-lg-6">
+											<div class="row">
+												<div class="col-lg-12">
+													<form role="form">
+														<div class="form-group">
+
+															<label>Código do item</label> <input type="number"
+																class="form-control"
+																placeholder="Digite o código do item">
+														</div>
+													</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+												</div>
+
+
+											</div>
+
+											<div class="row"></div>
+
+
+
+											<form role="form">
+												<div class="form-group">
+													<label>Nome do item</label> <input class="form-control"
+														placeholder="Digite o nome do item">
+												</div>
+
+
+												<div class="form-group">
+													<label>Fábricante</label> <select class="form-control">
+														<option>Apple</option>
+														<option>LG</option>
+														<option>Outros</option>
+													</select>
+												</div>
+												<div class="form-group">
+													<label>Tempo de garantia</label> <select
+														class="form-control">
+														<option>1 ano</option>
+														<option>2 anos</option>
+														<option>3 anos</option>
+														<option>4 anos</option>
+														<option>5 anos</option>
+														<option>Ilimitada</option>
+														<option>Sem garantia</option>
+													</select>
+												</div>
+												<div class="form-group">
+													<label>Categoria</label> <select class="form-control">
+														<option>Eletronico</option>
+														<option>Mobilia</option>
+													</select>
+												</div>
+												<div class="form-group">
+													<label>Observação</label>
+													<textarea class="form-control" rows="3"></textarea>
+												</div>
+											</form>
 										</div>
-										<div class="form-group">
-											<label>Telefone</label> <input class="form-control"
-												placeholder="Digite o telefone do Departamento"
-												type="number">
+										<div class="col-lg-6">
+
+											<div class="panel panel-info">
+												<div class="panel-heading">Imagem do produto</div>
+												<div class="panel-body">
+													<center>
+														<a href="#"><img
+															src="http://iacom.s8.com.br/produtos/01/00/item/111804/8/111804870G1.jpg"
+															width="250" height="250" class="img-thumbnail" /></a>
+													</center>
+												</div>
+												<div class="panel-footer">
+													<div class="form-group">
+														<label>Enviar foto</label> <input type="file">
+													</div>
+
+												</div>
+
+											</div>
+											<button type="submit" class="btn btn-outline btn-success">Enviar</button>
+											<button type="reset" class="btn btn-outline btn-warning">Resetar</button>
+											<button type="submit" class="btn btn-outline btn-danger">Editar</button>
 										</div>
-										<div class="form-group">
-											<label>Observação</label>
-											<textarea class="form-control" rows="3"></textarea>
-										</div>
-										<button type="submit" class="btn btn-outline btn-success">Cadastrar</button>
-										<button type="reset" class="btn btn-outline btn-warning">Editar</button>
-										<button type="submit" class="btn btn-outline btn-danger">Apagar</button>
-									</form>
+
+									</div>
 
 
 
