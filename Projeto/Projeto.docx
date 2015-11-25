@@ -1,24 +1,101 @@
-Página Cadastro de usuário(cadastro_user):
-  - Nome
-  - Email
-  - Tipo de usuário
+Menus Geral:
+
+Cadastrar item
+Visualizar item
+ -Visualizar item geral
+ -Visualizar item especifico
+Cadastros Gerais
+ -Cadastrar Fabricante
+ -Cadastrar Unidade
+ -Cadastrar Categoria
+ -Cadastrar Unidade
+Relatórios
+ -Relatório 1
+ -Relatório 2
+ -Relatório 3
   
-Página Cadastro de categorias(cadastro_categ):
-  
-Página Cadastro de Produto de Patrimônio(cadastro):
+Página Cadastro de Produto de Patrimônio(cadastroItem.jsp):
   - Código
   - Número da plaqueta
   - Data de compra
   - Número da nota fiscal
+  - Quantidade
+  - Situação
+  - Nome do item
+  - Fabricante
   - Tempo de garantia
-  - Nota fiscal(xml ou .pdf)
-  - Foto (.jpg)
-  - Descrição
-  - Fornecedor
+  - Categoria
   - Unidade
   - Departamento
+  - Responsável
+  - Observação
+  - Imagem do produto
+  - Nota fiscal(xml ou .pdf)
+  
+Visualizar Itens>Visualizar item geral(visualizarItemGeral.jsp):
+  - Nome para busca
+  - Código para Busca
+  
+  - Código
+  - Nome do item
+  - Fabricante
+  - Tempo de garantia
   - Categoria
   - Observação
-  - Quantidade
-  - Situação(Novo, usado, etc...)
-  - Valor Unitário R$
+  
+Visualizar Itens>Visualizar item especifico(visualizarItemEspecifico.jsp):
+  - Nome para busca
+  - Código para Busca
+  - Número da plaqueta
+  - Categoria
+  - Unidade
+  - Departamento
+  
+  - Resultado da Busca
+  
+Cadastros Gerais>Cadastrar Fabricante(cadastroFabricante.jsp):
+  - Nome para busca
+  - Lista Nomes
+  
+  - Nome Fabricante
+  - Endereço
+  - Telefone
+  - Site
+  - Observação
+
+Cadastros Gerais>Cadastrar Categoria(cadastroCategoria.jsp):
+  - Nome para busca
+  - Lista Nomes
+  
+  - Nome Categoria
+  - Observação
+  
+Cadastros Gerais>Cadastrar Departamento(cadastroDepartamento.jsp):
+  - Nome para busca
+  - Lista Nomes
+  
+  - Nome Departamento
+  - Telefone
+  - Observação
+  
+Cadastros Gerais>Cadastrar Unidade(cadastroUnidade.jsp):
+  - Nome para busca
+  - Lista Nomes
+  
+  - Nome Unidade
+  - Endereço
+  - Telefone
+  - Observação
+  
+Relatórios>Relatório de itens
+  - Nome para Busca
+  - Codigo
+  - Categoria
+  - Unidade
+  - Departamento
+  
+  - Resultado da Busca
+  
+Relatórios>Relatório 2
+
+Relatórios>Relatório 3
