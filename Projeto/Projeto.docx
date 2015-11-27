@@ -55,6 +55,7 @@ Visualizar Itens>Visualizar item especifico(visualizarItemEspecifico.jsp):
   
 Cadastros Gerais>Cadastrar Fabricante(cadastroFabricante.jsp):
   - Nome para busca
+  - Código do Fabricante
   - Lista Nomes
   
   - Nome Fabricante
@@ -65,6 +66,7 @@ Cadastros Gerais>Cadastrar Fabricante(cadastroFabricante.jsp):
 
 Cadastros Gerais>Cadastrar Categoria(cadastroCategoria.jsp):
   - Nome para busca
+  - Código do Fabricante
   - Lista Nomes
   
   - Nome Categoria
@@ -72,6 +74,7 @@ Cadastros Gerais>Cadastrar Categoria(cadastroCategoria.jsp):
   
 Cadastros Gerais>Cadastrar Departamento(cadastroDepartamento.jsp):
   - Nome para busca
+  - Código do Departamento
   - Lista Nomes
   
   - Nome Departamento
@@ -80,6 +83,7 @@ Cadastros Gerais>Cadastrar Departamento(cadastroDepartamento.jsp):
   
 Cadastros Gerais>Cadastrar Unidade(cadastroUnidade.jsp):
   - Nome para busca
+  - Código da Unidade
   - Lista Nomes
   
   - Nome Unidade
