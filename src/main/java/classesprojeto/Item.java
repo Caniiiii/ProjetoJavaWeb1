@@ -2,7 +2,6 @@ package classesprojeto;
 
 import java.util.Calendar;
 
-import javax.validation.constraints.Future;
 
 public class Item {
 private int codigo;

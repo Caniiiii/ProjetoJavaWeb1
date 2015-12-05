@@ -19,13 +19,13 @@
 			<version>3.1.0</version>
 			<scope>provided</scope>
 		</dependency>
-		<!--Para postgresqul -->
+		<!--Para mysql -->
 		<dependency>
-			<groupId>postgresql</groupId>
-			<artifactId>postgresql</artifactId>
-			<version>9.1-901-1.jdbc4</version>
-
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.6</version>
 		</dependency>
+
 		<!-- Para Hibernate -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
