@@ -91,11 +91,10 @@
 						<li><a href="cadastroItem.jsp"><i
 								class="fa fa-plus-circle fa-fw"></i>Cadastrar Itens</a></li>
 
-						<li><a href="#"><i class="fa fa-search  fa-fw"></i>Visualizar
-								Itens<span class="fa arrow"></span></a>
+						<li><a href="#"><i class="fa fa-search fa-fw"></i>Visualizar<span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
-								<li><a href="visualizarItemGeral.jsp"><i
-										class="fa fa-copy fa-fw"></i>Itens Gerais</a></li>
+								<li><a href="visualizarProduto.jsp"><i
+										class="fa fa-copy fa-fw"></i>Produtos</a></li>
 								<li><a href="visualizarItemEspecifico.jsp"><i
 										class="fa fa-file-o fa-fw"></i>Itens Especificos</a></li>
 							</ul> <!-- /.nav-second-level --></li>
@@ -103,6 +102,8 @@
 						<li><a href="#"><i class="fa fa-tags  fa-fw"></i>Cadastros
 								Gerais<span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
+							<li><a href="cadastroProduto.jsp"><i
+										class="fa fa-cube fa-fw"></i>Cadastrar Produto</a></li>
 								<li><a href="cadastroFabricante.jsp"><i
 										class="fa fa-building fa-fw"></i>Cadastrar Fabricante</a></li>
 								<li><a href="cadastroCategoria.jsp"><i
@@ -133,19 +134,19 @@
 		<div id="page-wrapper">
 			<div class="row">
 				<div class="col-lg-12">
-					<h1 class="page-header">Visualizar Item Geral</h1>
+					<h1 class="page-header">Visualizar Produto Geral</h1>
 				</div>
 			</div>
 
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="panel panel-green">
-						<div class="panel-heading">Pesquisa de Item Geral</div>
+						<div class="panel-heading">Pesquisa de Produto Geral</div>
 						<div class="panel-body">
 
 							<div class="form-group input-group">
 								<input type="text" class="form-control"
-									placeholder="Digite o nome de um item para busca"> <span
+									placeholder="Digite o nome de um produto para busca"> <span
 									class="input-group-btn">
 									<button class="btn btn-default" type="button">
 										<i class="fa fa-search"></i>
@@ -170,7 +171,7 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="panel panel-primary">
-						<div class="panel-heading">Informações do Item</div>
+						<div class="panel-heading">Informações do Produto</div>
 						<div class="panel-body">
 							<div class="row">
 								<div class="col-md-12">
@@ -182,9 +183,9 @@
 													<form role="form">
 														<div class="form-group">
 
-															<label>Código do item</label> <input type="number"
+															<label>Código do produto</label> <input type="number"
 																class="form-control"
-																placeholder="Digite o código do item">
+																placeholder="Digite o código do produto">
 														</div>
 													</form>
 												</div>
@@ -193,8 +194,8 @@
 											<div class="row"></div>
 											<form role="form">
 												<div class="form-group">
-													<label>Nome do item</label> <input class="form-control"
-														placeholder="Digite o nome do item">
+													<label>Nome do produto</label> <input class="form-control"
+														placeholder="Digite o nome do produto">
 												</div>
 
 

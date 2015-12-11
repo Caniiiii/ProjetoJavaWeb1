@@ -117,12 +117,12 @@
 						<li><a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Relatórios<span
 								class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
-								<li><a href="relatorioItens.jsp"><i
-										class="fa fa-desktop fa-fw"></i>Relatório de itens</a></li>
+								<li><a href="#"><i class="fa fa-desktop fa-fw"></i>Relatório
+										por Categorias</a></li>
 								<li><a href="#"><i class="fa fa-external-link fa-fw"></i>Relatório
-										2</a></li>
+										por Departamento</a></li>
 								<li><a href="#"><i class="fa fa-institution fa-fw"></i>Relatório
-										3</a></li>
+										por Unidades</a></li>
 							</ul> <!-- /.nav-second-level --></li>
 					</ul>
 				</div>
@@ -134,72 +134,95 @@
 		<div id="page-wrapper">
 			<div class="row">
 				<div class="col-lg-12">
-					<h1 class="page-header">Cadastro de Fabricante</h1>
+					<h1 class="page-header">Cadastrar Produto</h1>
 				</div>
 			</div>
 
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="panel panel-green">
-						<div class="panel-heading">Pesquisa de Fabricante</div>
-						<div class="panel-body">
 
-							<div class="form-group input-group">
-								<input type="text" class="form-control"
-									placeholder="Digite um fabricante para busca"> <span
-									class="input-group-btn">
-									<button class="btn btn-default" type="button">
-										<i class="fa fa-search"></i>
-									</button>
-								</span>
-							</div>
-							<form role="form">
-								<div class="form-group">
-									<label>Listar fabricantes cadastrados</label> <select
-										class="form-control">
-										<option>Apple</option>
-										<option>LG</option>
-										<option>Fabricação Propria</option>
-									</select>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="panel panel-primary">
-						<div class="panel-heading">Cadastrar novo Fabricante</div>
+						<div class="panel-heading">Cadastrar Produto</div>
 						<div class="panel-body">
 							<div class="row">
 								<div class="col-md-12">
-									<form role="form">
-										<div class="form-group">
-											<label>Nome do fabricante</label> <input class="form-control"
-												placeholder="Digite o nome do fabricante" type="text">
-										</div>
-										<div class="form-group">
-											<label>Endereço</label> <input class="form-control"
-												placeholder="Digite o endereço do fabricante" type="text">
-										</div>
 
-										<div class="form-group">
-											<label>Telefone</label> <input class="form-control"
-												placeholder="Digite o telefone do fabricante" type="number">
+									<div class="row">
+										<div class="col-lg-6">
+											<div class="row">
+												<div class="col-lg-12">
+													<form role="form">
+														<div class="form-group">
+
+															<label>Código do produto</label> <input type="number"
+																class="form-control"
+																placeholder="Digite o código do produto">
+														</div>
+													</form>
+												</div>
+											</div>
+
+											<div class="row"></div>
+											<form role="form">
+												<div class="form-group">
+													<label>Nome do produto</label> <input class="form-control"
+														placeholder="Digite o nome do produto">
+												</div>
+
+
+												<div class="form-group">
+													<label>Fábricante</label> <select class="form-control">
+														<option>Apple</option>
+														<option>LG</option>
+														<option>Outros</option>
+													</select>
+												</div>
+												<div class="form-group">
+													<label>Tempo de garantia</label> <select
+														class="form-control">
+														<option>1 ano</option>
+														<option>2 anos</option>
+														<option>3 anos</option>
+														<option>4 anos</option>
+														<option>5 anos</option>
+														<option>Ilimitada</option>
+														<option>Sem garantia</option>
+													</select>
+												</div>
+												<div class="form-group">
+													<label>Categoria</label> <select class="form-control">
+														<option>Eletronico</option>
+														<option>Mobilia</option>
+													</select>
+												</div>
+												<div class="form-group">
+													<label>Observação</label>
+													<textarea class="form-control" rows="3"></textarea>
+												</div>
+											</form>
 										</div>
-										<div class="form-group">
-											<label>Site</label> <input class="form-control"
-												placeholder="Digite o site do fabricante" type="text">
+										<div class="col-lg-6">
+
+											<div class="panel panel-info">
+												<div class="panel-heading">Imagem do produto</div>
+												<div class="panel-body">
+													<center>
+														<a href="#"><img
+															src="http://iacom.s8.com.br/produtos/01/00/item/111804/8/111804870G1.jpg"
+															width="250" height="250" class="img-thumbnail" /></a>
+													</center>
+												</div>
+												<div class="panel-footer">
+													<div class="form-group">
+														<label>Enviar foto</label> <input type="file">
+													</div>
+												</div>
+											</div>
+											<button type="submit" class="btn btn-outline btn-success">Enviar</button>
+											<button type="reset" class="btn btn-outline btn-warning">Resetar</button>
+											<button type="submit" class="btn btn-outline btn-danger">Editar</button>
 										</div>
-										<div class="form-group">
-											<label>Observação</label>
-											<textarea class="form-control" rows="3"></textarea>
-										</div>
-										<button type="submit" class="btn btn-outline btn-success">Cadastrar</button>
-										<button type="reset" class="btn btn-outline btn-warning">Editar</button>
-										<button type="submit" class="btn btn-outline btn-danger">Apagar</button>
-									</form>
+									</div>
 								</div>
 							</div>
 						</div>

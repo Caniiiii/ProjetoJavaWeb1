@@ -91,11 +91,10 @@
 						<li><a href="cadastroItem.jsp"><i
 								class="fa fa-plus-circle fa-fw"></i>Cadastrar Itens</a></li>
 
-						<li><a href="#"><i class="fa fa-search  fa-fw"></i>Visualizar
-								Itens<span class="fa arrow"></span></a>
+						<li><a href="#"><i class="fa fa-search fa-fw"></i>Visualizar<span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
 								<li><a href="visualizarItemGeral.jsp"><i
-										class="fa fa-copy fa-fw"></i>Itens Gerais</a></li>
+										class="fa fa-copy fa-fw"></i>Produtos</a></li>
 								<li><a href="visualizarItemEspecifico.jsp"><i
 										class="fa fa-file-o fa-fw"></i>Itens Especificos</a></li>
 							</ul> <!-- /.nav-second-level --></li>
@@ -103,6 +102,8 @@
 						<li><a href="#"><i class="fa fa-tags  fa-fw"></i>Cadastros
 								Gerais<span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
+							<li><a href="cadastroProduto.jsp"><i
+										class="fa fa-cube fa-fw"></i>Cadastrar Produto</a></li>
 								<li><a href="cadastroFabricante.jsp"><i
 										class="fa fa-building fa-fw"></i>Cadastrar Fabricante</a></li>
 								<li><a href="cadastroCategoria.jsp"><i
