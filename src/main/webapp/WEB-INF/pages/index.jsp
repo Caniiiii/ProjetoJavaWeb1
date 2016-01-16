@@ -1,3 +1,8 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ page isELIgnored="false"%>
+
 <!DOCTYPE html>
 <html>
 
@@ -35,11 +40,17 @@
     <![endif]-->
 
 <!-- /End CSS -->
+<style>
+span#message{
+color: green;
+align: center;
 
+}
+</style>
 </head>
 
 <body>
-
+     <span id="message">${message}</span>
 	<div id="wrapper">
 
 		<!-- Navigation -->
@@ -47,7 +58,7 @@
 			style="margin-bottom: 0">
 			<div class="navbar-header">
 				<a class="navbar-brand" href="index.jsp">UFG - Sistema de gestão
-					de património</a>
+					de património</a>    
 			</div>
 			<!-- /.navbar-header -->
 
@@ -66,7 +77,7 @@
 						<li><a href="#"><i class="fa fa-user-md fa-fw"></i>Manutenção
 								de usuários</a>
 						<li class="divider"></li>
-						<li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i>Deslogar</a>
+						<li><a href="${pageContext.request.contextPath}/usuario/logout"><i class="fa fa-sign-out fa-fw"></i>Deslogar</a>
 						</li>
 					</ul> <!-- /.dropdown-user --></li>
 				<!-- /.dropdown -->

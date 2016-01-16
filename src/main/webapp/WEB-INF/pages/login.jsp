@@ -1,11 +1,14 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ page isELIgnored="false"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>UFG - Projeto Web</title>
 
-<link rel="stylesheet" href="css/bootstrap.min.css" />
-<link rel="stylesheet" href="css/default.css" />
 
 <!-- CSS Pagina de login -->
 <link href="http://seonglee.com/theme/authenty-v1.2/css/bootstrap.css"
@@ -59,35 +62,34 @@
 								<div class="title" data-animation="fadeInDown"
 									data-animation-delay=".8s">
 									<h2>CATSA Sistemas</h2>
-									<p>Cuidando do seu patrimônio</p>
+									<p>Cuidando do seu patrim�nio</p>
 								</div>
 								<div id="form_1" data-animation="bounceIn">
 									<div class="form-header">
 										<i class="fa fa-user"></i>
 									</div>
+
 									<div class="form-main">
+
+
 										<div class="form-group">
-											<input type="text" id="un_1" class="form-control"
-												placeholder="Usuário" required="required"> <input
-												type="password" id="pw_1" class="form-control"
-												placeholder="Senha" required="required">
+											<form:form
+												action="${pageContext.request.contextPath}/usuario/efetuarLogin.html"
+												method="POST" commandname="usuario" modelAttribute="usuario">
+												<form:input type="text" id="un_1" class="form-control"
+													placeholder="Usuario" required="required" path="userName"></form:input>
+												<form:input type="password" id="pw_1" class="form-control"
+													placeholder="Senha" required="required" path="senha"></form:input>
+													<input type="submit"
+											class="btn btn-block signin" value="Logar">
+											<br>
+											<span color="red">${message}</span>
+								               </form:form>
 										</div>
-										<button id="signIn_1" type="submit"
-											class="btn btn-block signin">Logar</button>
+										
+
 									</div>
-									<div class="form-footer">
-										<div class="row">
-											<div class="col-xs-7">
-												<i class="fa fa-unlock-alt"></i> <a
-													href="#password_recovery" id="forgot_from_1">Esqueceu
-													sua senha?</a>
-											</div>
-											<div class="col-xs-5">
-												<i class="fa fa-check"></i> <a href="#signup_window"
-													id="signup_from_1">Registrar-se</a>
-											</div>
-										</div>
-									</div>
+
 								</div>
 							</div>
 						</div>
