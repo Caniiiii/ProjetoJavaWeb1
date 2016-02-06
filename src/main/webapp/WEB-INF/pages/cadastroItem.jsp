@@ -1,9 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<%@ page isELIgnored="false"%>
+
 <!DOCTYPE html>
 <html>
 
 <head>
 
-<title>Cadastro de Produto - Sistema de gestão de património</title>
+<title>Cadastro de Produto - Sistema de gestï¿½o de patrimï¿½nio</title>
 
 <!-- CSSs -->
 
@@ -47,8 +54,8 @@
 		<nav class="navbar navbar-topo navbar-static-top" role="navigation"
 			style="margin-bottom: 0">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="index.jsp">UFG - Sistema de gestão
-					de património</a>
+				<a class="navbar-brand" href="index.jsp">UFG - Sistema de gestÃ£o
+					de patrimÃ´nio</a>
 			</div>
 			<!-- /.navbar-header -->
 
@@ -61,14 +68,15 @@
 				</a>
 					<ul class="dropdown-menu dropdown-user">
 						<li><a href="#"><i class="fa fa-user fa-fw"></i>Perfil</a></li>
-						<li><a href="#"><i class="fa fa-gear fa-fw"></i>Configurações</a>
+						<li><a href="#"><i class="fa fa-gear fa-fw"></i>ConfiguraÃ§Ãµes</a>
 						</li>
 						<li class="divider"></li>
-						<li><a href="#"><i class="fa fa-user-md fa-fw"></i>Manutenção
-								de usuários</a>
+						<li><a href="#"><i class="fa fa-user-md fa-fw"></i>ManutenÃ§Ã£o
+								de usuÃ¡rios</a>
 						<li class="divider"></li>
-						<li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i>Deslogar</a>
-						</li>
+						<li><a
+							href="${pageContext.request.contextPath}/usuario/logout"><i
+								class="fa fa-sign-out fa-fw"></i>Deslogar</a></li>
 					</ul> <!-- /.dropdown-user --></li>
 				<!-- /.dropdown -->
 			</ul>
@@ -91,7 +99,8 @@
 						<li><a href="cadastroItem.jsp"><i
 								class="fa fa-plus-circle fa-fw"></i>Cadastrar Itens</a></li>
 
-						<li><a href="#"><i class="fa fa-search fa-fw"></i>Visualizar<span class="fa arrow"></span></a>
+						<li><a href="#"><i class="fa fa-search fa-fw"></i>Visualizar<span
+								class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
 								<li><a href="visualizarProduto.jsp"><i
 										class="fa fa-copy fa-fw"></i>Produtos</a></li>
@@ -102,28 +111,35 @@
 						<li><a href="#"><i class="fa fa-tags  fa-fw"></i>Cadastros
 								Gerais<span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
-							<li><a href="cadastroProduto.jsp"><i
+								<li><a href="cadastroProduto.jsp"><i
 										class="fa fa-cube fa-fw"></i>Cadastrar Produto</a></li>
 								<li><a href="cadastroFabricante.jsp"><i
 										class="fa fa-building fa-fw"></i>Cadastrar Fabricante</a></li>
 								<li><a href="cadastroCategoria.jsp"><i
 										class="fa fa-desktop fa-fw"></i>Cadastrar Categoria</a></li>
-								<li><a href="cadastroDepartamento.jsp"><i
+								<li><a href="${pageContext.request.contextPath}/departamento/adicionar"><i
 										class="fa fa-external-link fa-fw"></i>Cadastrar Departamento</a></li>
-								<li><a href="cadastroUnidade.jsp"><i
+								<li><a
+									href="${pageContext.request.contextPath}/unidade/cadastro"><i
 										class="fa fa-institution fa-fw"></i>Cadastrar Unidade</a></li>
+								<li><a
+									href="${pageContext.request.contextPath}/endereco/adicionar"><i
+										class="fa fa-institution fa-fw"></i>Cadastrar endereco</a></li>
 							</ul> <!-- /.nav-second-level --></li>
+					</ul>
+					<!-- /.nav-second-level -->
+					</li>
 
-						<li><a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Relatórios<span
-								class="fa arrow"></span></a>
-							<ul class="nav nav-second-level">
-								<li><a href="relatorioItens.jsp"><i
-										class="fa fa-desktop fa-fw"></i>Relatório de itens</a></li>
-								<li><a href="#"><i class="fa fa-external-link fa-fw"></i>Relatório
-										2</a></li>
-								<li><a href="#"><i class="fa fa-institution fa-fw"></i>Relatório
-										3</a></li>
-							</ul> <!-- /.nav-second-level --></li>
+					<li><a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>RelatÃ³rios<span
+							class="fa arrow"></span></a>
+						<ul class="nav nav-second-level">
+							<li><a href="relatorioItens.jsp"><i
+									class="fa fa-desktop fa-fw"></i>Relatï¿½rio de itens</a></li>
+							<li><a href="#"><i class="fa fa-external-link fa-fw"></i>Relatï¿½rio
+									2</a></li>
+							<li><a href="#"><i class="fa fa-institution fa-fw"></i>Relatï¿½rio
+									3</a></li>
+						</ul> <!-- /.nav-second-level --></li>
 					</ul>
 				</div>
 				<!-- /.sidebar-collapse -->
@@ -133,12 +149,12 @@
 		<div id="page-wrapper">
 			<div class="row">
 				<div class="col-lg-12">
-					<h1 class="page-header">Cadastro de Patrimônio</h1>
+					<h1 class="page-header">Cadastro de PatrimÃ´nio</h1>
 				</div>
 			</div>
 
 
-<div class="row">
+			<div class="row">
 				<div class="col-lg-12">
 					<div class="panel panel-green">
 						<div class="panel-heading">Pesquisa de Produto</div>
@@ -156,7 +172,7 @@
 
 							<div class="form-group input-group">
 								<input type="number" class="form-control"
-									placeholder="Digite um código de produto para busca"> <span
+									placeholder="Digite um cÃ³digo de produto para busca"> <span
 									class="input-group-btn">
 									<button class="btn btn-default" type="button">
 										<i class="fa fa-search"></i>
@@ -167,12 +183,12 @@
 					</div>
 				</div>
 			</div>
-			
-			
+
+
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="panel panel-success">
-						<div class="panel-heading">Incluir Patrimônio</div>
+						<div class="panel-heading">Incluir PatrimÃ´nio</div>
 						<div class="panel-body">
 							<div class="row">
 								<div class="col-md-12">
@@ -180,126 +196,158 @@
 										<div class="col-lg-6">
 											<div class="row">
 												<div class="col-lg-4">
-													<form role="form">
+													<form:form role="form"
+														action="${pageContext.request.contextPath}/item/cadastro/process"
+														method="GET" commandname="item" modelAttribute="item">
 														<div class="form-group">
 
-															<label>Código do item</label> <input type="number"
-																class="form-control"
-																placeholder="Digite o código do item">
+															<label>CÃ³digo do item</label>
+															<form:input type="number" class="form-control"
+																placeholder="Digite o cÃ³digo do item"
+																required="required" path="codigo" />
 														</div>
-													</form>
+													</form:form>
 												</div>
 
 												<div class="col-lg-4">
-													<form role="form">
+													<form:form role="form"
+														action="${pageContext.request.contextPath}/item/cadastro/process"
+														method="GET" commandname="item" modelAttribute="item">
 														<div class="form-group">
 
-															<label>N da plaqueta</label> <input type="number"
-																class="form-control" placeholder="Número da plaqueta">
+															<label>N da plaqueta</label>
+															<form:input type="number" class="form-control"
+																placeholder="NÃºmero da plaqueta" required="required"
+																path="numeroPlaqueta" />
 														</div>
-													</form>
+													</form:form>
 												</div>
 
 												<div class="col-lg-4">
-													<form role="form">
+													<form:form role="form"
+														action="${pageContext.request.contextPath}/item/cadastro/process"
+														method="GET" commandname="item" modelAttribute="item">
 														<div class="form-group">
 
-															<label>Data de Compra</label> <input type="date"
-																class="form-control" placeholder="Data de compra">
+															<label>Data de Compra</label>
+															<form:input type="date" class="form-control"
+																placeholder="Data de compra" require="required"
+																path="dataDeCompra" />
 														</div>
-													</form>
+													</form:form>
 												</div>
 											</div>
 
 											<div class="row">
 												<div class="col-lg-4">
-													<form role="form">
+													<form:form role="form"
+														action="${pageContext.request.contextPath}/item/cadastro/process"
+														method="GET" commandname="item" modelAttribute="item">
 														<div class="form-group">
-															<label>N da nota</label> <input type="number"
-																class="form-control"
-																placeholder="Digite o numero da nota">
+															<label>N da nota</label>
+															<form:input type="number" class="form-control"
+																placeholder="Digite o numero da nota"
+																required="required" path="notaFiscalPdf" />
 														</div>
-													</form>
+													</form:form>
 												</div>
 
 												<div class="col-lg-4">
-													<form role="form">
+													<form:form role="form"
+														action="${pageContext.request.contextPath}/item/cadastro/process"
+														method="GET" commandname="item" modelAttribute="item">
 														<div class="form-group">
-															<label>Quantidade</label> <input type="number"
-																class="form-control"
-																placeholder="Digite a quantidade de itens">
+															<label>Quantidade</label>
+															<form:input type="number" class="form-control"
+																placeholder="Digite a quantidade de itens"
+																required="required" path="quantidade" />
 														</div>
-													</form>
+													</form:form>
 
 												</div>
 												<div class="col-lg-4">
 
-													<form role="form">
+													<form:form role="form"
+														action="${pageContext.request.contextPath}/item/cadastro/process"
+														method="GET" commandname="item" modelAttribute="item">
 														<div class="form-group">
-															<label>Situação</label> <select class="form-control">
-																<option>Novo</option>
-																<option>Usado</option>
-																<option>Perecível</option>
-															</select>
+															<label>SituaÃ§Ã£o</label>
+															<form:select class="form-control" path="situacao">
+																<form:option value="#">Novo</form:option>
+																<form:option value="#">Usado</form:option>
+																<form:option value="#">PerecÃ­vel</form:option>
+															</form:select>
 														</div>
-													</form>
+													</form:form>
 												</div>
 											</div>
 
-											<form role="form">
+											<form:form role="form"
+												action="${pageContext.request.contextPath}/item/cadastro/process"
+												method="GET" commandname="item" modelAttribute="item">
+
 												<div class="form-group">
-													<label>Nome do item</label> <input class="form-control"
-														placeholder="Digite o nome do item">
+													<label>Nome do item</label>
+													<form:input class="form-control"
+														placeholder="Digite o nome do item" required="required"
+														path="nomeItem" />
 												</div>
 
 												<div class="form-group">
-													<label>Fábricante</label> <select class="form-control">
-														<option>Apple</option>
-														<option>LG</option>
-														<option>Outros</option>
-													</select>
+													<label>Fabricante</label>
+													<form:select class="form-control" path="fabricante">
+														<form:option value="#">Apple</form:option>
+														<form:option value="#">LG</form:option>
+														<form:option value="#">Outros</form:option>
+													</form:select>
 												</div>
 												<div class="form-group">
-													<label>Tempo de garantia</label> <select
-														class="form-control">
-														<option>1 ano</option>
-														<option>2 anos</option>
-														<option>3 anos</option>
-														<option>4 anos</option>
-														<option>5 anos</option>
-														<option>Ilimitada</option>
-														<option>Sem garantia</option>
-													</select>
+													<label>Tempo de garantia</label>
+													<form:select class="form-control" path="tempoGarantia">
+														<form:option value="#">1 ano</form:option>
+														<form:option value="#">2 anos</form:option>
+														<form:option value="#">3 anos</form:option>
+														<form:option value="#">4 anos</form:option>
+														<form:option value="#">5 anos</form:option>
+														<form:option value="#">Ilimitada</form:option>
+														<form:option value="#">Sem garantia</form:option>
+													</form:select>
 												</div>
 												<div class="form-group">
-													<label>Categoria</label> <select class="form-control">
-														<option>Eletronico</option>
-														<option>Mobilia</option>
-													</select>
+													<label>Categoria</label>
+													<form:select class="form-control" path="categoria">
+														<form:option value="#">Eletronico</form:option>
+														<form:option value="#">Mobilia</form:option>
+													</form:select>
 												</div>
 												<div class="form-group">
-													<label>Unidade</label> <select class="form-control">
-														<option>Goiânia - Setor Sul</option>
-														<option>Goiânia - T10</option>
-														<option>Anápolis</option>
-													</select>
+													<label>Unidade</label>
+													<form:select class="form-control" path="unidades">
+														<form:option value="#">GoiÃ£nia - Setor Sul</form:option>
+														<form:option value="#">GoiÃ£nia - T10</form:option>
+														<form:option value="#">AnÃ¡polis</form:option>
+													</form:select>
 												</div>
 												<div class="form-group">
-													<label>Departamento</label> <select class="form-control">
-														<option>Financeiro</option>
-														<option>Assistência</option>
-														<option>Salão</option>
-													</select>
+													<label>Departamento</label>
+													<form:select class="form-control" path="departamento">
+														<form:option value="#">Financeiro</form:option>
+														<form:option value="#">AssistÃªncia</form:option>
+														<form:option value="#">SalÃ£o</form:option>
+													</form:select>
 												</div>
 												<div class="form-group">
-													<label>Responsável</label> <input class="form-control"
-														placeholder="Digite o responsável pelo equipamento caso exista">
+													<label>ResponsÃ¡vel</label>
+													<form:input class="form-control"
+														placeholder="Digite o responsÃ¡vel pelo equipamento caso exista"
+														path="responsavel" />
 												</div>
 												<div class="form-group">
-													<label>Observação</label>
-													<textarea class="form-control" rows="3"></textarea>
+													<label>ObservaÃ§Ã£o</label>
+													<form:textarea class="form-control" rows="3"
+														path="observacao"></form:textarea>
 												</div>
-											</form>
+											</form:form>
 										</div>
 										<div class="col-lg-6">
 

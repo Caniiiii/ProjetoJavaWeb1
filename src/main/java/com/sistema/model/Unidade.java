@@ -6,26 +6,33 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "teams")
+@Table(name = "unidade")
 public class Unidade {
 
 	@Id
 	@GeneratedValue
 	private Integer id_unidade;
+	private Integer id_endereco;
 	private String nomeUnidade;
-    
-	
-	@OneToMany(mappedBy="unidade")
+	private String telefone;
+	private Integer strEndereco;
+
+	@OneToMany(mappedBy = "unidade")
 	private List<Departamento> departamentos;
+	
 	@OneToOne
 	@JoinColumn(name = "id_unidade")
 	private Endereco endereco;
+
+	@ManyToMany(mappedBy = "unidades")
+    private List<Item> items;
 	private String observacao;
 
 	public Integer getId() {
@@ -36,9 +43,7 @@ public class Unidade {
 		this.id_unidade = id;
 	}
 
-	public Unidade(String nomeUnidade) {
-		this.nomeUnidade = nomeUnidade;
-	}
+	
 
 	public String getNomeUnidade() {
 		return nomeUnidade;
@@ -71,5 +76,44 @@ public class Unidade {
 	public void setDepartamento(List<Departamento> departamentos) {
 		this.departamentos = departamentos;
 	}
+	
+	
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+     
+	
+	public Integer getStrEndereco() {
+		return strEndereco;
+	}
+
+	public void setStrEndereco(Integer strEndereco) {
+		this.strEndereco = strEndereco;
+	}
+	
+	
+
+	public Integer getId_endereco() {
+		return id_endereco;
+	}
+
+	public void setId_endereco(Integer id_endereco) {
+		this.id_endereco = id_endereco;
+	}
+
+	public List<Item> getItems() {
+		return items;
+	}
+
+	public void setItems(List<Item> items) {
+		this.items = items;
+	}
+	
+	
 
 }

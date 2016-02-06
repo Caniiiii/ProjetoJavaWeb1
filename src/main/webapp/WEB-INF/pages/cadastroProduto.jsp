@@ -108,9 +108,10 @@
 										class="fa fa-building fa-fw"></i>Cadastrar Fabricante</a></li>
 								<li><a href="cadastroCategoria.jsp"><i
 										class="fa fa-desktop fa-fw"></i>Cadastrar Categoria</a></li>
-								<li><a href="cadastroDepartamento.jsp"><i
+								<li><a href="${pageContext.request.contextPath}/departamento/adicionar"><i
 										class="fa fa-external-link fa-fw"></i>Cadastrar Departamento</a></li>
-								<li><a href="cadastroUnidade.jsp"><i
+								<li><a
+									href="${pageContext.request.contextPath}/unidade/cadastro"><i
 										class="fa fa-institution fa-fw"></i>Cadastrar Unidade</a></li>
 							</ul> <!-- /.nav-second-level --></li>
 

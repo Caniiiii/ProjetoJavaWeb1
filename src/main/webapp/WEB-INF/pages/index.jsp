@@ -41,16 +41,15 @@
 
 <!-- /End CSS -->
 <style>
-span#message{
-color: green;
-align: center;
-
+span#message {
+	color: green;
+	align: center;
 }
 </style>
 </head>
 
 <body>
-     <span id="message">${message}</span>
+	<span id="message">${message}</span>
 	<div id="wrapper">
 
 		<!-- Navigation -->
@@ -58,7 +57,7 @@ align: center;
 			style="margin-bottom: 0">
 			<div class="navbar-header">
 				<a class="navbar-brand" href="index.jsp">UFG - Sistema de gestão
-					de património</a>    
+					de património</a>
 			</div>
 			<!-- /.navbar-header -->
 
@@ -77,8 +76,9 @@ align: center;
 						<li><a href="#"><i class="fa fa-user-md fa-fw"></i>Manutenção
 								de usuários</a>
 						<li class="divider"></li>
-						<li><a href="${pageContext.request.contextPath}/usuario/logout"><i class="fa fa-sign-out fa-fw"></i>Deslogar</a>
-						</li>
+						<li><a
+							href="${pageContext.request.contextPath}/usuario/logout"><i
+								class="fa fa-sign-out fa-fw"></i>Deslogar</a></li>
 					</ul> <!-- /.dropdown-user --></li>
 				<!-- /.dropdown -->
 			</ul>
@@ -98,10 +98,12 @@ align: center;
 								</span>
 							</div> <!-- /input-group -->
 						</li>
-						<li><a href="cadastroItem.jsp"><i
+						<li><a
+							href="${pageContext.request.contextPath}/item/cadastro"><i
 								class="fa fa-plus-circle fa-fw"></i>Cadastrar Itens</a></li>
 
-						<li><a href="#"><i class="fa fa-search fa-fw"></i>Visualizar<span class="fa arrow"></span></a>
+						<li><a href="#"><i class="fa fa-search fa-fw"></i>Visualizar<span
+								class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
 								<li><a href="visualizarProduto.jsp"><i
 										class="fa fa-copy fa-fw"></i>Produtos</a></li>
@@ -118,22 +120,30 @@ align: center;
 										class="fa fa-building fa-fw"></i>Cadastrar Fabricante</a></li>
 								<li><a href="cadastroCategoria.jsp"><i
 										class="fa fa-desktop fa-fw"></i>Cadastrar Categoria</a></li>
-								<li><a href="cadastroDepartamento.jsp"><i
+								<li><a href="${pageContext.request.contextPath}/departamento/adicionar"><i
 										class="fa fa-external-link fa-fw"></i>Cadastrar Departamento</a></li>
-								<li><a href="cadastroUnidade.jsp"><i
+								<li><a
+									href="${pageContext.request.contextPath}/unidade/cadastro"><i
 										class="fa fa-institution fa-fw"></i>Cadastrar Unidade</a></li>
+								<li><a
+									href="${pageContext.request.contextPath}/endereco/adicionar"><i
+										class="fa fa-institution fa-fw"></i>Cadastrar endereco</a></li>
 							</ul> <!-- /.nav-second-level --></li>
+					</ul>
+					<!-- /.nav-second-level -->
+					</li>
 
-						<li><a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Relatórios<span
-								class="fa arrow"></span></a>
-							<ul class="nav nav-second-level">
-								<li><a href="relatorioItens.jsp"><i
-										class="fa fa-desktop fa-fw"></i>Relatório de itens</a></li>
-								<li><a href="#"><i class="fa fa-external-link fa-fw"></i>Relatório
-										2</a></li>
-								<li><a href="#"><i class="fa fa-institution fa-fw"></i>Relatório
-										3</a></li>
-							</ul> <!-- /.nav-second-level --></li>
+
+					<li><a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Relatórios<span
+							class="fa arrow"></span></a>
+						<ul class="nav nav-second-level">
+							<li><a href="relatorioItens.jsp"><i
+									class="fa fa-desktop fa-fw"></i>Relatório de itens</a></li>
+							<li><a href="#"><i class="fa fa-external-link fa-fw"></i>Relatório
+									2</a></li>
+							<li><a href="#"><i class="fa fa-institution fa-fw"></i>Relatório
+									3</a></li>
+						</ul> <!-- /.nav-second-level --></li>
 					</ul>
 				</div>
 				<!-- /.sidebar-collapse -->

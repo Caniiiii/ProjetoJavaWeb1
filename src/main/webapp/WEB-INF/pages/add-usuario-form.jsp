@@ -9,8 +9,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<h1>Adicionar contatos</h1>
-<p>Adicionar contatos ao sistema</p>
+<h1>Adicionar Usuario</h1>
+<p>Adicionar Usuario ao sistema</p>
 <form:form method="POST" commandname="usuario" modelAttribute="usuario"
 	action="${pageContext.request.contextPath}/usuario/add/process.html">
 	<table>

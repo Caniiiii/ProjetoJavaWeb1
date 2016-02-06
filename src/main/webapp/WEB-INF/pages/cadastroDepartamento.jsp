@@ -1,3 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<%@ page isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 
@@ -40,7 +46,6 @@
 </head>
 
 <body>
-
 	<div id="wrapper">
 
 		<!-- Navigation -->
@@ -90,7 +95,8 @@
 						</li>
 						<li><a href="cadastroItem.jsp"><i
 								class="fa fa-plus-circle fa-fw"></i>Cadastrar Itens</a></li>
-						<li><a href="#"><i class="fa fa-search fa-fw"></i>Visualizar<span class="fa arrow"></span></a>
+						<li><a href="#"><i class="fa fa-search fa-fw"></i>Visualizar<span
+								class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
 								<li><a href="visualizarProduto.jsp"><i
 										class="fa fa-copy fa-fw"></i>Produtos</a></li>
@@ -101,28 +107,35 @@
 						<li><a href="#"><i class="fa fa-tags  fa-fw"></i>Cadastros
 								Gerais<span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
-							<li><a href="cadastroProduto.jsp"><i
+								<li><a href="cadastroProduto.jsp"><i
 										class="fa fa-cube fa-fw"></i>Cadastrar Produto</a></li>
 								<li><a href="cadastroFabricante.jsp"><i
 										class="fa fa-building fa-fw"></i>Cadastrar Fabricante</a></li>
 								<li><a href="cadastroCategoria.jsp"><i
 										class="fa fa-desktop fa-fw"></i>Cadastrar Categoria</a></li>
-								<li><a href="cadastroDepartamento.jsp"><i
+								<li><a href="${pageContext.request.contextPath}/departamento/adicionar"><i
 										class="fa fa-external-link fa-fw"></i>Cadastrar Departamento</a></li>
-								<li><a href="cadastroUnidade.jsp"><i
+								<li><a
+									href="${pageContext.request.contextPath}/unidade/cadastro"><i
 										class="fa fa-institution fa-fw"></i>Cadastrar Unidade</a></li>
+								<li><a
+									href="${pageContext.request.contextPath}/endereco/adicionar"><i
+										class="fa fa-institution fa-fw"></i>Cadastrar endereco</a></li>
 							</ul> <!-- /.nav-second-level --></li>
+					</ul>
+					<!-- /.nav-second-level -->
+					</li>
 
-						<li><a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Relatórios<span
-								class="fa arrow"></span></a>
-							<ul class="nav nav-second-level">
-								<li><a href="relatorioItens.jsp"><i
-										class="fa fa-desktop fa-fw"></i>Relatório de itens</a></li>
-								<li><a href="#"><i class="fa fa-external-link fa-fw"></i>Relatório
-										2</a></li>
-								<li><a href="#"><i class="fa fa-institution fa-fw"></i>Relatório
-										3</a></li>
-							</ul> <!-- /.nav-second-level --></li>
+					<li><a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Relatórios<span
+							class="fa arrow"></span></a>
+						<ul class="nav nav-second-level">
+							<li><a href="relatorioItens.jsp"><i
+									class="fa fa-desktop fa-fw"></i>Relatório de itens</a></li>
+							<li><a href="#"><i class="fa fa-external-link fa-fw"></i>Relatório
+									2</a></li>
+							<li><a href="#"><i class="fa fa-institution fa-fw"></i>Relatório
+									3</a></li>
+						</ul> <!-- /.nav-second-level --></li>
 					</ul>
 				</div>
 				<!-- /.sidebar-collapse -->
@@ -171,25 +184,27 @@
 						<div class="panel-body">
 							<div class="row">
 								<div class="col-md-12">
-									<form role="form">
+									<form:form role="form"
+										action="${pageContext.request.contextPath}/departamento/adicionar/process"
+										method="POST" commandname="departamento" modelAttribute="departamento">
 										<div class="form-group">
-											<label>Nome do Departamento</label> <input
+											<label>Nome do Departamento</label> <form:input
 												class="form-control"
-												placeholder="Digite o nome do Departamento" type="text">
+												placeholder="Digite o nome do Departamento" type="text"  path="nomeDepartamento" />
 										</div>
 										<div class="form-group">
-											<label>Telefone</label> <input class="form-control"
+											<label>Telefone</label> <form:input class="form-control"
 												placeholder="Digite o telefone do Departamento"
-												type="number">
+												type="text" path="telefone"/>
 										</div>
 										<div class="form-group">
 											<label>Observação</label>
-											<textarea class="form-control" rows="3"></textarea>
+											<form:textarea class="form-control" rows="3" path="observacao"></form:textarea>
 										</div>
 										<button type="submit" class="btn btn-outline btn-success">Cadastrar</button>
 										<button type="reset" class="btn btn-outline btn-warning">Editar</button>
 										<button type="submit" class="btn btn-outline btn-danger">Apagar</button>
-									</form>
+									</form:form>
 								</div>
 							</div>
 						</div>
@@ -222,5 +237,7 @@
 
 
 		<!-- /End Scripts -->
+		<script>alert("${message}");</script>
+		
 </body>
 </html>

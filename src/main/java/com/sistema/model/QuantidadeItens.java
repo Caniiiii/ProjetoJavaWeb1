@@ -1,54 +1,52 @@
 package com.sistema.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "quantidadeItens")
+@Table(name = "quantidade_Itens")
 public class QuantidadeItens {
 
 	@Id
 	@GeneratedValue
-	private Integer id;
-	private int codigo;
-	private int quantidade;
-	private int quantItens;
-    
+	private Integer quantidade_id;
 	
+	@OneToMany(mappedBy="quantidades")
+	private List <Item> itens;
+ 
+	private int numDeItens;
 	
-	public int getQuantidade() {
-		return quantidade;
-	}
-
-	public void setQuantidade(int quantidade) {
-		this.quantidade = quantidade;
-	}
-
-	public int getCodigo() {
-		return codigo;
-	}
-
-	public void setCodigo(int codigo) {
-		this.codigo = codigo;
-	}
 
 	public Integer getId() {
-		return id;
+		return quantidade_id;
 	}
 
 	public void setId(Integer id) {
-		this.id = id;
+		this.quantidade_id = id;
 	}
 
-	public int getQuantItens() {
-		return quantItens;
+	public Item getItem() {
+		return (Item) itens;
 	}
 
-	public void setQuantItens(int quantItens) {
-		this.quantItens = quantItens;
+	public void setItem(List <Item> itens) {
+		this.itens = itens;
 	}
 
+	public int getNumDeItens() {
+		return numDeItens;
+	}
+
+	public void setNumDeItens(int numDeItens) {
+		this.numDeItens = numDeItens;
+	}
+	
+	
 	
 }

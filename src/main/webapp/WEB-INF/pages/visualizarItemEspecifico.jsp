@@ -91,7 +91,8 @@
 						<li><a href="cadastroItem.jsp"><i
 								class="fa fa-plus-circle fa-fw"></i>Cadastrar Itens</a></li>
 
-						<li><a href="#"><i class="fa fa-search fa-fw"></i>Visualizar<span class="fa arrow"></span></a>
+						<li><a href="#"><i class="fa fa-search fa-fw"></i>Visualizar<span
+								class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
 								<li><a href="visualizarProduto.jsp"><i
 										class="fa fa-copy fa-fw"></i>Produtos</a></li>
@@ -102,28 +103,35 @@
 						<li><a href="#"><i class="fa fa-tags  fa-fw"></i>Cadastros
 								Gerais<span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
-							<li><a href="cadastroProduto.jsp"><i
+								<li><a href="cadastroProduto.jsp"><i
 										class="fa fa-cube fa-fw"></i>Cadastrar Produto</a></li>
 								<li><a href="cadastroFabricante.jsp"><i
 										class="fa fa-building fa-fw"></i>Cadastrar Fabricante</a></li>
 								<li><a href="cadastroCategoria.jsp"><i
 										class="fa fa-desktop fa-fw"></i>Cadastrar Categoria</a></li>
-								<li><a href="cadastroDepartamento.jsp"><i
+								<li><a href="${pageContext.request.contextPath}/departamento/adicionar"><i
 										class="fa fa-external-link fa-fw"></i>Cadastrar Departamento</a></li>
-								<li><a href="cadastroUnidade.jsp"><i
+								<li><a
+									href="${pageContext.request.contextPath}/unidade/cadastro"><i
 										class="fa fa-institution fa-fw"></i>Cadastrar Unidade</a></li>
+								<li><a
+									href="${pageContext.request.contextPath}/endereco/adicionar"><i
+										class="fa fa-institution fa-fw"></i>Cadastrar endereco</a></li>
 							</ul> <!-- /.nav-second-level --></li>
+					</ul>
+					<!-- /.nav-second-level -->
+					</li>
 
-						<li><a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Relatórios<span
-								class="fa arrow"></span></a>
-							<ul class="nav nav-second-level">
-								<li><a href="#"><i class="fa fa-desktop fa-fw"></i>Relatório
-										por Categorias</a></li>
-								<li><a href="#"><i class="fa fa-external-link fa-fw"></i>Relatório
-										por Departamento</a></li>
-								<li><a href="#"><i class="fa fa-institution fa-fw"></i>Relatório
-										por Unidades</a></li>
-							</ul> <!-- /.nav-second-level --></li>
+					<li><a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Relatórios<span
+							class="fa arrow"></span></a>
+						<ul class="nav nav-second-level">
+							<li><a href="#"><i class="fa fa-desktop fa-fw"></i>Relatório
+									por Categorias</a></li>
+							<li><a href="#"><i class="fa fa-external-link fa-fw"></i>Relatório
+									por Departamento</a></li>
+							<li><a href="#"><i class="fa fa-institution fa-fw"></i>Relatório
+									por Unidades</a></li>
+						</ul> <!-- /.nav-second-level --></li>
 					</ul>
 				</div>
 				<!-- /.sidebar-collapse -->

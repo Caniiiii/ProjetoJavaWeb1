@@ -23,26 +23,35 @@ public class Item {
 	private int numeroPlaqueta;
 	private Calendar dataDeCompra;
 	private String nomeItem;
-	
+	private String situacao;
 	@ManyToMany
 	@JoinTable(name="item_fabricante", joinColumns=@JoinColumn(name="id_item"),
 	inverseJoinColumns=@JoinColumn(name="id_fabricante"))
 	private List <Fabricante> fabricantes;
-	private Calendar tempoGarantia;
+	private String tempoGarantia;
 	
 	@ManyToOne
 	@JoinColumn(name="id_categoria")
     private Categoria categoria;
 	
-	@ManyToOne
-	@JoinColumn(name="id_departamento")
-	private Departamento departamento;
+	@ManyToMany
+	@JoinTable(name="item_departamento", joinColumns=@JoinColumn(name="id_item"),
+	inverseJoinColumns=@JoinColumn(name="id_departamento"))
+	private List <Departamento> departamentos;
 	private String responsavel;
-	private String observcao;
+	private String observacao;
 	private String imagemProduto;
 	private String notaFiscalPdf;
-
+	private int quantidade;
 	
+	@ManyToOne
+	@JoinColumn(name="quantidade_id")
+    private QuantidadeItens quantidades;
+	
+	@ManyToMany
+	@JoinTable(name="item_unidade", joinColumns=@JoinColumn(name="id_item"),
+	inverseJoinColumns=@JoinColumn(name="id_unidade"))
+	private List <Unidade> unidades;
 
 	public Integer getId() {
 		return id_item;
@@ -92,11 +101,11 @@ public class Item {
 		this.fabricantes = fabricantes;
 	}
 
-	public Calendar getTempoGarantia() {
+	public String getTempoGarantia() {
 		return tempoGarantia;
 	}
 
-	public void setTempoGarantia(Calendar tempoGarantia) {
+	public void setTempoGarantia(String tempoGarantia) {
 		this.tempoGarantia = tempoGarantia;
 	}
 
@@ -109,11 +118,11 @@ public class Item {
 	}
 
 	public Departamento getDepartamento() {
-		return departamento;
+		return (Departamento) departamentos;
 	}
 
-	public void setDepartamento(Departamento departamento) {
-		this.departamento = departamento;
+	public void setDepartamento(List <Departamento> departamentos) {
+		this.departamentos = departamentos;
 	}
 
 	public String getResponsavel() {
@@ -124,12 +133,12 @@ public class Item {
 		this.responsavel = responsavel;
 	}
 
-	public String getObservcao() {
-		return observcao;
+	public String getObservacao() {
+		return observacao;
 	}
 
-	public void setObservcao(String observcao) {
-		this.observcao = observcao;
+	public void setObservacao(String observacao) {
+		this.observacao = observacao;
 	}
 
 	public String getImagemProduto() {
@@ -148,4 +157,31 @@ public class Item {
 		this.notaFiscalPdf = notaFiscalPdf;
 	}
 
+	public int getQuantidade() {
+		return quantidade;
+	}
+
+	public void setQuantidade(int quantidade) {
+		this.quantidade = quantidade;
+	}
+
+	public String getSituacao() {
+		return situacao;
+	}
+
+	public void setSituacao(String situacao) {
+		this.situacao = situacao;
+	}
+
+	public List<Unidade> getUnidades() {
+		return unidades;
+	}
+
+	public void setUnidades(List<Unidade> unidades) {
+		this.unidades = unidades;
+	}
+
+	
+	
+	
 }
