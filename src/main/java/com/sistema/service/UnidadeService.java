@@ -9,5 +9,5 @@ public interface UnidadeService {
 	public List <Unidade> getUnidadeList();
 
 	public void adicionarUnidade(Unidade unidade);
-	public Unidade getUnidade(String nome);
+	public Unidade obterUnidade(int id);
 }

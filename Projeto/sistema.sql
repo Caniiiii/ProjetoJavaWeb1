@@ -43,6 +43,7 @@ CREATE TABLE `fabricante` (
   `nomeFabricante` varchar(40) NOT NULL,  
   `telefone` varChar(30) NOT NULL, 
   `site` varChar(30) NOT NULL,
+  `strEndereco` int,
   `observacao` varChar(120), 
   PRIMARY KEY (`id_fabricante`)  
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
@@ -52,16 +53,23 @@ CREATE TABLE `item` (
   `id_item` int(6) NOT NULL AUTO_INCREMENT,  
   `codigo` int NOT NULL,
   `numeroPlaqueta` int NOT NULL,  
-  `dataDeCompra` DATE NOT NULL, 
-  `tempoGarantia` varChar(9) NOT NULL,
-  `nomeItem` varChar(30) NOT NULL,
+  `dataDeCompra` VarChar(20) NOT NULL, 
   `responsavel` varChar(30), 
-  `observcao` varChar(120),
-  `imagemProduto` varChar(120),
+  `observacao` varChar(120),
   `quantidade` int NOT NULL,
   `notaFiscalPdf` varChar(40),
-  `situacao` varChar(7),
-  PRIMARY KEY (`id_item`)  
+  `situacao` varChar(15),
+   `prodId` int,
+   `uniId` int,
+   `departId` int,
+   `notaCaminho` varChar(90),
+  `id_produto` int,
+  `id_unidade` int,
+  `id_departamento` int,
+  PRIMARY KEY (`id_item`),
+  FOREIGN KEY (`id_unidade`) REFERENCES unidade(`id_unidade`),
+  FOREIGN KEY (`id_departamento`) REFERENCES departamento(`id_departamento`),
+  FOREIGN KEY (`id_produto`) REFERENCES produtos(`id_produto`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 
@@ -88,23 +96,20 @@ CREATE TABLE `usuario` (
   PRIMARY KEY (`id`)  
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
-CREATE TABLE `item_fabricante` (  
-  `id_item` int NOT NULL,  
-   `id_fabricante` int NOT NULL 
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
-
-CREATE TABLE `item_unidade` (  
-  `id_item` int NOT NULL,  
-   `id_unidade` int NOT NULL 
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
-
-CREATE TABLE `item_departamento` (  
-  `id_item` int NOT NULL,  
-   `id_departametento` int NOT NULL 
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 
-CREATE TABLE `Quantidade_Itens` (  
-  `id_item` int NOT NULL,  
-   `numeroDeItens` int NOT NULL 
+CREATE TABLE `produtos` (  
+  `id_produto` int NOT NULL AUTO_INCREMENT,
+   `id_categoria` int,
+   `id_fabricante` int,
+   `codigo` int NOT NULL,
+   `nomeProduto` varChar(30)  NOT NULL,
+   `tempoGarantia` varChar(30),
+   `observacao` varChar(120),
+   `imagemProduto` varChar(150),
+   `caminhoFab` int,
+   `caminhoCat` int,
+   PRIMARY KEY(`id_produto`)
+
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+

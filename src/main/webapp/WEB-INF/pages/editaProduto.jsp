@@ -9,7 +9,7 @@
 
 <head>
 
-<title>Cadastro de Produto - Sistema de gestão de património</title>
+<title>Editar Produto - Sistema de gestão de património</title>
 
 <!-- CSSs -->
 
@@ -73,9 +73,8 @@
 						<li><a href="#"><i class="fa fa-user-md fa-fw"></i>Manutenção
 								de usuários</a>
 						<li class="divider"></li>
-						<li><a
-							href="${pageContext.request.contextPath}/usuario/logout"><i
-								class="fa fa-sign-out fa-fw"></i>Deslogar</a></li>
+						<li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i>Deslogar</a>
+						</li>
 					</ul> <!-- /.dropdown-user --></li>
 				<!-- /.dropdown -->
 			</ul>
@@ -95,13 +94,15 @@
 								</span>
 							</div> <!-- /input-group -->
 						</li>
-						<li><a href="cadastroItem.jsp"><i
+						<li><a
+							href="${pageContext.request.contextPath}/itens/cadastrar"><i
 								class="fa fa-plus-circle fa-fw"></i>Cadastrar Itens</a></li>
 
 						<li><a href="#"><i class="fa fa-search fa-fw"></i>Visualizar<span
 								class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
-								<li><a href="visualizarProduto.jsp"><i
+								<li><a
+									href="${pageContext.request.contextPath}/produto/visualizar"><i
 										class="fa fa-copy fa-fw"></i>Produtos</a></li>
 								<li><a href="visualizarItemEspecifico.jsp"><i
 										class="fa fa-file-o fa-fw"></i>Itens Especificos</a></li>
@@ -110,13 +111,17 @@
 						<li><a href="#"><i class="fa fa-tags  fa-fw"></i>Cadastros
 								Gerais<span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
-								<li><a href="cadastroProduto.jsp"><i
+								<li><a
+									href="${pageContext.request.contextPath}/produto/adicionar"><i
 										class="fa fa-cube fa-fw"></i>Cadastrar Produto</a></li>
-								<li><a href="cadastroFabricante.jsp"><i
+								<li><a
+									href="${pageContext.request.contextPath}/fabricante/adicionar"><i
 										class="fa fa-building fa-fw"></i>Cadastrar Fabricante</a></li>
-								<li><a href="cadastroCategoria.jsp"><i
+								<li><a
+									href="${pageContext.request.contextPath}/categoria/adicionar"><i
 										class="fa fa-desktop fa-fw"></i>Cadastrar Categoria</a></li>
-								<li><a href="${pageContext.request.contextPath}/departamento/adicionar"><i
+								<li><a
+									href="${pageContext.request.contextPath}/departamento/adicionar"><i
 										class="fa fa-external-link fa-fw"></i>Cadastrar Departamento</a></li>
 								<li><a
 									href="${pageContext.request.contextPath}/unidade/cadastro"><i
@@ -125,125 +130,125 @@
 									href="${pageContext.request.contextPath}/endereco/adicionar"><i
 										class="fa fa-institution fa-fw"></i>Cadastrar endereco</a></li>
 							</ul> <!-- /.nav-second-level --></li>
-					</ul>
-					<!-- /.nav-second-level -->
-					</li>
 
-					<li><a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Relatórios<span
-							class="fa arrow"></span></a>
-						<ul class="nav nav-second-level">
-							<li><a href="relatorioItens.jsp"><i
-									class="fa fa-desktop fa-fw"></i>Relatório de itens</a></li>
-							<li><a href="#"><i class="fa fa-external-link fa-fw"></i>Relatório
-									2</a></li>
-							<li><a href="#"><i class="fa fa-institution fa-fw"></i>Relatório
-									3</a></li>
-						</ul> <!-- /.nav-second-level --></li>
+						<li><a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Relatórios<span
+								class="fa arrow"></span></a>
+							<ul class="nav nav-second-level">
+								<li><a href="#"><i class="fa fa-desktop fa-fw"></i>Relatório
+										por Categorias</a></li>
+								<li><a href="#"><i class="fa fa-external-link fa-fw"></i>Relatório
+										por Departamento</a></li>
+								<li><a href="#"><i class="fa fa-institution fa-fw"></i>Relatório
+										por Unidades</a></li>
+							</ul> <!-- /.nav-second-level --></li>
 					</ul>
 				</div>
 				<!-- /.sidebar-collapse -->
 			</div>
 			<!-- /.navbar-static-side -->
 		</nav>
+
 		<div id="page-wrapper">
 			<div class="row">
 				<div class="col-lg-12">
-					<h1 class="page-header">Cadastro de Patrimônio</h1>
+					<h1 class="page-header">Cadastrar Produto</h1>
 				</div>
 			</div>
 
 
 			<div class="row">
 				<div class="col-lg-12">
-					<div class="panel panel-green">
-						<div class="panel-heading">Pesquisa de Produto</div>
-						<div class="panel-body">
-
-							<div class="form-group input-group">
-								<input type="text" class="form-control"
-									placeholder="Digite o nome de um produto para busca"> <span
-									class="input-group-btn">
-									<button class="btn btn-default" type="button">
-										<i class="fa fa-search"></i>
-									</button>
-								</span>
-							</div>
-
-							<div class="form-group input-group">
-								<input type="number" class="form-control"
-									placeholder="Digite um código de produto para busca"> <span
-									class="input-group-btn">
-									<button class="btn btn-default" type="button">
-										<i class="fa fa-search"></i>
-									</button>
-								</span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="panel panel-success">
-						<div class="panel-heading">Escolha a Unidade</div>
+					<div class="panel panel-primary">
+						<div class="panel-heading">Cadastrar Produto</div>
 						<div class="panel-body">
 							<div class="row">
 								<div class="col-md-12">
+
 									<div class="row">
 										<div class="col-lg-6">
-											<div class="row">
-												<form:form role="form"
-													action="${pageContext.request.contextPath}/item/add/unidade/${unidade.unidadeNome}.html"
-													method="GET" commandname="unidade" modelAttribute="unidade">
+											<form:form method="POST" commandname="produto"
+												modelAttribute="produto"
+												action="${pageContext.request.contextPath}/produto/edita/${produto.id}.html">
+												<div class="row">
+
+													<div class="col-lg-12">
+
+														<div class="form-group">
+
+															<label>Código do produto</label>
+															<form:input type="text" class="form-control"
+																placeholder="Digite o código do produto" path="codigo" />
+														</div>
+													</div>
+
+												</div>
+
+												<div class="row"></div>
+
+												<div class="form-group">
+													<label>Nome do produto</label>
+													<form:input class="form-control"
+														placeholder="Digite o nome do produto" required="required"
+														path="nomeProduto" />
+												</div>
 
 
+												<div class="form-group">
+													<label>Fábricante</label>
+													<form:select class="form-control" path="caminhoFab">
+														<c:forEach var="fab" items="${fabricantes}">
+															<form:option value="${fab.id}">${fab.nomeFabricante }</form:option>
+														</c:forEach>
+													</form:select>
+												</div>
+												<div class="form-group">
+													<label>Tempo de garantia</label>
+													<form:select class="form-control" path="tempoGarantia">
+														<form:option value="1 ano">1 ano</form:option>
+														<form:option value="2 anos">2 anos</form:option>
+														<form:option value="3 anos">3 anos</form:option>
+														<form:option value="4 anos">4 anos</form:option>
+														<form:option value="5 anos">5 anos</form:option>
+														<form:option value="Ilimitada">Ilimitada</form:option>
+														<form:option value="Sem garantia">Sem garantia</form:option>
+													</form:select>
+												</div>
+												<div class="form-group">
+													<label>Categoria</label>
+													<form:select class="form-control" path="caminhoCat">
+														<c:forEach var="cat" items="${categorias }">
+															<option value="${cat.id }">${cat.nomeCategoria }</option>
+														</c:forEach>
+													</form:select>
+												</div>
+												<div class="form-group">
+													<label>Observação</label>
+													<form:textarea class="form-control" rows="3"
+														path="observacao"></form:textarea>
+												</div>
+												<button type="submit" class="btn btn-outline btn-success">Atualizar</button>
+
+											</form:form>
+										</div>
+										<div class="col-lg-6">
+
+											<div class="panel panel-info">
+												<div class="panel-heading">Imagem do produto</div>
+												<div class="panel-body">
+													<center>
+														<a href="#"><img src="foto.jpg" width="250"
+															height="250" class="img-thumbnail" /></a>
+													</center>
+												</div>
+												<div class="panel-footer">
 													<div class="form-group">
-														<label>Unidade</label>
-														<form:select class="form-control" path="unidades">
-															<c:forEach var="unidade" items="${unidades}">
-															   ${unidade.nomeUnidade}
-															</c:forEach>
-														</form:select>
-													</div>
-
-
-
-
-
-												</form:form>
-											</div>
-
-											<div class="col-lg-6">
-
-												<div class="panel panel-info">
-													<div class="panel-heading">Imagem do produto</div>
-													<div class="panel-body">
-														<center>
-															<a href="#"><img
-																src="http://iacom.s8.com.br/produtos/01/00/item/111804/8/111804870G1.jpg"
-																width="250" height="250" class="img-thumbnail" /></a>
-														</center>
-													</div>
-													<div class="panel-footer">
-														<div class="form-group">
-															<label>Enviar foto</label> <input type="file">
-														</div>
+														<label>Enviar foto</label> <input type="file">
 													</div>
 												</div>
-
-												<div class="panel panel-info">
-													<div class="panel-heading">Arquivo nota fiscal</div>
-													<div class="panel-footer">
-														<div class="form-group">
-															<label>Enviar .pdf nota fiscal</label> <input type="file">
-														</div>
-													</div>
-												</div>
-												<button type="submit" class="btn btn-outline btn-success">Enviar</button>
-												<button type="reset" class="btn btn-outline btn-warning">Resetar</button>
 											</div>
+											<button type="submit" class="btn btn-outline btn-success">Enviar</button>
+											<button type="reset" class="btn btn-outline btn-warning">Resetar</button>
+											<button type="submit" class="btn btn-outline btn-danger">Editar</button>
 										</div>
 									</div>
 								</div>
@@ -252,12 +257,11 @@
 					</div>
 				</div>
 			</div>
-			<!-- /#wrapper -->
-
-			<!-- Scripts -->
-
-
 		</div>
+		<!-- /#wrapper -->
+
+		<!-- Scripts -->
+
 		<!-- /#wrapper -->
 
 		<!-- jQuery -->
@@ -279,5 +283,11 @@
 
 
 		<!-- /End Scripts -->
+		<c:if test="${message != null}">
+			<c:set var="mess" scope="session" value="${message}" />
+			<script>
+				alert("${mess}");
+			</script>
+		</c:if>
 </body>
 </html>

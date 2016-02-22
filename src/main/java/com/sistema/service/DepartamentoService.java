@@ -9,6 +9,6 @@ public interface DepartamentoService {
 	public void adicionarDepartamento(Departamento depart);
 	public void ExcluirDepartamento(int id);
 	public void atualizarDepartamento(Departamento depart);
-	public void obterDepartamento(int id);
+	public Departamento obterDepartamento(int id);
 	public List<Departamento> listarDepart();
 }

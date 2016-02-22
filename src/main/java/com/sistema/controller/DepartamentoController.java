@@ -31,5 +31,7 @@ public class DepartamentoController {
 		modewAndView.addObject("message",message);
 		return modewAndView;
 	}
+	
+
 
 }

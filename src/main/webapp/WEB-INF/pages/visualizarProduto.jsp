@@ -1,3 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<%@ page isELIgnored="false"%>
+
 <!DOCTYPE html>
 <html>
 
@@ -6,6 +13,9 @@
 <title>Cadastro de Produto - Sistema de gestão de património</title>
 
 <!-- CSSs -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 
 <!-- Bootstrap Core CSS -->
 <link rel="stylesheet"
@@ -36,6 +46,20 @@
     <![endif]-->
 
 <!-- /End CSS -->
+
+<script type="text/javascript">
+	function mostrarDiv() {
+		var x = document.getElementById("myInput").value;
+		var y = document.getElementById(x).innerHTML;
+
+		if (y != null) {
+			document.getElementById("demo").innerHTML = y;
+		} else {
+			document.getElementById("demo").innerHTML = "Produto não encontrado";
+
+		}
+	}
+</script>
 
 </head>
 
@@ -88,13 +112,15 @@
 								</span>
 							</div> <!-- /input-group -->
 						</li>
-						<li><a href="cadastroItem.jsp"><i
+						<li><a
+							href="${pageContext.request.contextPath}/itens/cadastrar"><i
 								class="fa fa-plus-circle fa-fw"></i>Cadastrar Itens</a></li>
 
 						<li><a href="#"><i class="fa fa-search fa-fw"></i>Visualizar<span
 								class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
-								<li><a href="visualizarProduto.jsp"><i
+								<li><a
+									href="${pageContext.request.contextPath}/produto/visualizar"><i
 										class="fa fa-copy fa-fw"></i>Produtos</a></li>
 								<li><a href="visualizarItemEspecifico.jsp"><i
 										class="fa fa-file-o fa-fw"></i>Itens Especificos</a></li>
@@ -103,13 +129,17 @@
 						<li><a href="#"><i class="fa fa-tags  fa-fw"></i>Cadastros
 								Gerais<span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
-								<li><a href="cadastroProduto.jsp"><i
+								<li><a
+									href="${pageContext.request.contextPath}/produto/adicionar"><i
 										class="fa fa-cube fa-fw"></i>Cadastrar Produto</a></li>
-								<li><a href="cadastroFabricante.jsp"><i
+								<li><a
+									href="${pageContext.request.contextPath}/fabricante/adicionar"><i
 										class="fa fa-building fa-fw"></i>Cadastrar Fabricante</a></li>
-								<li><a href="cadastroCategoria.jsp"><i
+								<li><a
+									href="${pageContext.request.contextPath}/categoria/adicionar""><i
 										class="fa fa-desktop fa-fw"></i>Cadastrar Categoria</a></li>
-								<li><a href="${pageContext.request.contextPath}/departamento/adicionar"><i
+								<li><a
+									href="${pageContext.request.contextPath}/departamento/adicionar"><i
 										class="fa fa-external-link fa-fw"></i>Cadastrar Departamento</a></li>
 								<li><a
 									href="${pageContext.request.contextPath}/unidade/cadastro"><i
@@ -146,30 +176,28 @@
 				</div>
 			</div>
 
+
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="panel panel-green">
 						<div class="panel-heading">Pesquisa de Produto Geral</div>
 						<div class="panel-body">
 
+
 							<div class="form-group input-group">
 								<input type="text" class="form-control"
-									placeholder="Digite o nome de um produto para busca"> <span
-									class="input-group-btn">
-									<button class="btn btn-default" type="button">
+									placeholder="Digite um código para busca" id="myInput">
+								<span class="input-group-btn">
+									<button class="btn btn-default" type="button"
+										onclick="mostrarDiv()">
 										<i class="fa fa-search"></i>
 									</button>
 								</span>
 							</div>
-
-							<div class="form-group input-group">
-								<input type="number" class="form-control"
-									placeholder="Digite um código para busca"> <span
-									class="input-group-btn">
-									<button class="btn btn-default" type="button">
-										<i class="fa fa-search"></i>
-									</button>
-								</span>
+							<div class="alert alert-success fade in">
+								<a href="#" class="close" data-dismiss="alert"
+									aria-label="close">&times;</a> <strong>Resultado: </strong><br>
+								<div id="demo"></div>
 							</div>
 						</div>
 					</div>
@@ -179,7 +207,7 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="panel panel-primary">
-						<div class="panel-heading">Informações do Produto</div>
+						<div class="panel-heading">Informações dos Produtos</div>
 						<div class="panel-body">
 							<div class="row">
 								<div class="col-md-12">
@@ -187,78 +215,30 @@
 									<div class="row">
 										<div class="col-lg-6">
 											<div class="row">
-												<div class="col-lg-12">
-													<form role="form">
-														<div class="form-group">
-
-															<label>Código do produto</label> <input type="number"
-																class="form-control"
-																placeholder="Digite o código do produto">
-														</div>
-													</form>
-												</div>
+												<div class="col-lg-12"></div>
 											</div>
 
 											<div class="row"></div>
-											<form role="form">
-												<div class="form-group">
-													<label>Nome do produto</label> <input class="form-control"
-														placeholder="Digite o nome do produto">
-												</div>
-
-
-												<div class="form-group">
-													<label>Fábricante</label> <select class="form-control">
-														<option>Apple</option>
-														<option>LG</option>
-														<option>Outros</option>
-													</select>
-												</div>
-												<div class="form-group">
-													<label>Tempo de garantia</label> <select
-														class="form-control">
-														<option>1 ano</option>
-														<option>2 anos</option>
-														<option>3 anos</option>
-														<option>4 anos</option>
-														<option>5 anos</option>
-														<option>Ilimitada</option>
-														<option>Sem garantia</option>
-													</select>
-												</div>
-												<div class="form-group">
-													<label>Categoria</label> <select class="form-control">
-														<option>Eletronico</option>
-														<option>Mobilia</option>
-													</select>
-												</div>
-												<div class="form-group">
-													<label>Observação</label>
-													<textarea class="form-control" rows="3"></textarea>
-												</div>
-											</form>
-										</div>
-										<div class="col-lg-6">
-
-											<div class="panel panel-info">
-												<div class="panel-heading">Imagem do produto</div>
-												<div class="panel-body">
-													<center>
-														<a href="#"><img
-															src="http://iacom.s8.com.br/produtos/01/00/item/111804/8/111804870G1.jpg"
-															width="250" height="250" class="img-thumbnail" /></a>
-													</center>
-												</div>
-												<div class="panel-footer">
-													<div class="form-group">
-														<label>Enviar foto</label> <input type="file">
+											<c:forEach var="produto" items="${produtos}">
+												<div class="alert alert-info fade in">
+													<a href="#" class="close" data-dismiss="alert"
+														aria-label="close">&times;</a>
+													<div id="${produto.codigo}">
+														<strong>${produto.nomeProduto }</strong><br> Codigo:
+														"${produto.codigo}" <br> Garantia:
+														"${produto.tempoGarantia}"<br> Fabricante:
+														${produto.fabricante.nomeFabricante}<br> Categoria:
+														${produto.categoria.nomeCategoria }<br>
+														${produto.id}<br>
+														<img src="${produto.imagemProduto}" alt="Imagem do Produto"/><br>
+														<button><a href="${pageContext.request.contextPath}/produto/delete/${produto.id}.html">Deletar</a></button>
+														<button><a href="${pageContext.request.contextPath}/produto/edita/${produto.id}.html">Editar</a></button>
+														
 													</div>
 												</div>
-											</div>
-											<button type="submit" class="btn btn-outline btn-success">Enviar</button>
-											<button type="reset" class="btn btn-outline btn-warning">Resetar</button>
-											<button type="submit" class="btn btn-outline btn-danger">Editar</button>
+											</c:forEach>
 										</div>
+
 									</div>
 								</div>
 							</div>
@@ -292,5 +272,11 @@
 
 
 		<!-- /End Scripts -->
+		<c:if test="${message != null}">
+		<c:set var="mess" scope="session" value="${message}" />
+		<script>
+			alert("${mess}");
+		</script>
+	</c:if>
 </body>
 </html>

@@ -21,7 +21,7 @@ public class Categoria {
 	private String observacao;
 
 	@OneToMany(mappedBy = "categoria")
-	private List<Item> itens;
+	private List<Produto> produtos;
 
 	public Integer getId() {
 		return id_categoria;

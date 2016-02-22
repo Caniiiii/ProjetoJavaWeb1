@@ -13,7 +13,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "iten")
+@Table(name = "item")
 public class Item {
 
 	@Id
@@ -21,37 +21,28 @@ public class Item {
 	private Integer id_item;
 	private int codigo;
 	private int numeroPlaqueta;
-	private Calendar dataDeCompra;
-	private String nomeItem;
+	private String dataDeCompra;
 	private String situacao;
-	@ManyToMany
-	@JoinTable(name="item_fabricante", joinColumns=@JoinColumn(name="id_item"),
-	inverseJoinColumns=@JoinColumn(name="id_fabricante"))
-	private List <Fabricante> fabricantes;
-	private String tempoGarantia;
-	
-	@ManyToOne
-	@JoinColumn(name="id_categoria")
-    private Categoria categoria;
-	
-	@ManyToMany
-	@JoinTable(name="item_departamento", joinColumns=@JoinColumn(name="id_item"),
-	inverseJoinColumns=@JoinColumn(name="id_departamento"))
-	private List <Departamento> departamentos;
 	private String responsavel;
 	private String observacao;
-	private String imagemProduto;
 	private String notaFiscalPdf;
 	private int quantidade;
+	private Integer uniId;
+	private Integer departId;
+	private Integer prodId;
+	private String notaCaminho;
 	
 	@ManyToOne
-	@JoinColumn(name="quantidade_id")
-    private QuantidadeItens quantidades;
+	@JoinColumn(name="id_unidade")
+	private Unidade unidade;
 	
-	@ManyToMany
-	@JoinTable(name="item_unidade", joinColumns=@JoinColumn(name="id_item"),
-	inverseJoinColumns=@JoinColumn(name="id_unidade"))
-	private List <Unidade> unidades;
+	@ManyToOne
+	@JoinColumn(name="id_departamento")
+	private Departamento departamento;
+	
+	@ManyToOne
+	@JoinColumn(name="id_produto")
+	private Produto produto;
 
 	public Integer getId() {
 		return id_item;
@@ -77,52 +68,12 @@ public class Item {
 		this.numeroPlaqueta = numeroPlaqueta;
 	}
 
-	public Calendar getDataDeCompra() {
+	public String getDataDeCompra() {
 		return dataDeCompra;
 	}
 
-	public void setDataDeCompra(Calendar dataDeCompra) {
+	public void setDataDeCompra(String dataDeCompra) {
 		this.dataDeCompra = dataDeCompra;
-	}
-
-	public String getNomeItem() {
-		return nomeItem;
-	}
-
-	public void setNomeItem(String nomeItem) {
-		this.nomeItem = nomeItem;
-	}
-
-	public Fabricante getFabricante() {
-		return (Fabricante) fabricantes;
-	}
-
-	public void setFabricante(List <Fabricante> fabricantes) {
-		this.fabricantes = fabricantes;
-	}
-
-	public String getTempoGarantia() {
-		return tempoGarantia;
-	}
-
-	public void setTempoGarantia(String tempoGarantia) {
-		this.tempoGarantia = tempoGarantia;
-	}
-
-	public Categoria getCategoria() {
-		return categoria;
-	}
-
-	public void setCategoria(Categoria categoria) {
-		this.categoria = categoria;
-	}
-
-	public Departamento getDepartamento() {
-		return (Departamento) departamentos;
-	}
-
-	public void setDepartamento(List <Departamento> departamentos) {
-		this.departamentos = departamentos;
 	}
 
 	public String getResponsavel() {
@@ -139,14 +90,6 @@ public class Item {
 
 	public void setObservacao(String observacao) {
 		this.observacao = observacao;
-	}
-
-	public String getImagemProduto() {
-		return imagemProduto;
-	}
-
-	public void setImagemProduto(String imagemProduto) {
-		this.imagemProduto = imagemProduto;
 	}
 
 	public String getNotaFiscalPdf() {
@@ -173,15 +116,66 @@ public class Item {
 		this.situacao = situacao;
 	}
 
-	public List<Unidade> getUnidades() {
-		return unidades;
+	public Unidade getUnidades() {
+		return unidade;
 	}
 
-	public void setUnidades(List<Unidade> unidades) {
-		this.unidades = unidades;
+	public void setUnidades(Unidade unidade) {
+		this.unidade = unidade;
 	}
 
+	public Departamento getDepartamento() {
+		return departamento;
+	}
+
+	public void setDepartamento(Departamento departamento) {
+		this.departamento = departamento;
+	}
+
+	public Integer getUniId() {
+		return uniId;
+	}
+
+	public void setUniId(Integer uniId) {
+		this.uniId = uniId;
+	}
+
+	public Integer getDepartId() {
+		return departId;
+	}
+
+	public void setDepartId(Integer departId) {
+		this.departId = departId;
+	}
+	
+
+	public Integer getProdId() {
+		return prodId;
+	}
+
+	public void setProdId(Integer prodId) {
+		this.prodId = prodId;
+	}
+
+
+	public String getNotaCaminho() {
+		return notaCaminho;
+	}
+
+	public void setNotaCaminho(String notaCaminho) {
+		this.notaCaminho = notaCaminho;
+	}
+
+	public Produto getProduto() {
+		return produto;
+	}
+
+	public void setProduto(Produto produto) {
+		this.produto = produto;
+	}
 	
 	
 	
+	
+
 }

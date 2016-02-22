@@ -31,9 +31,12 @@ public class Unidade {
 	@JoinColumn(name = "id_unidade")
 	private Endereco endereco;
 
-	@ManyToMany(mappedBy = "unidades")
-    private List<Item> items;
 	private String observacao;
+	
+	@OneToMany
+	@JoinColumn(name="unidade")
+	private List <Item> itens;
+	
 
 	public Integer getId() {
 		return id_unidade;
@@ -69,11 +72,11 @@ public class Unidade {
 		this.observacao = observacao;
 	}
 
-	public List<Departamento> getDepartamento() {
+	public List<Departamento> getDepartamentos() {
 		return departamentos;
 	}
 
-	public void setDepartamento(List<Departamento> departamentos) {
+	public void setDepartamentos(List<Departamento> departamentos) {
 		this.departamentos = departamentos;
 	}
 	
@@ -106,14 +109,23 @@ public class Unidade {
 		this.id_endereco = id_endereco;
 	}
 
-	public List<Item> getItems() {
-		return items;
+	public Integer getId_unidade() {
+		return id_unidade;
 	}
 
-	public void setItems(List<Item> items) {
-		this.items = items;
+	public void setId_unidade(Integer id_unidade) {
+		this.id_unidade = id_unidade;
+	}
+
+	public List<Item> getItens() {
+		return itens;
+	}
+
+	public void setItens(List<Item> itens) {
+		this.itens = itens;
 	}
 	
 	
 
+	
 }

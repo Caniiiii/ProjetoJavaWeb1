@@ -4,13 +4,12 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <%@ page isELIgnored="false"%>
-
 <!DOCTYPE html>
 <html>
 
 <head>
 
-<title>Cadastro de Produto - Sistema de gestão de património</title>
+<title>Adicionar foto do produto</title>
 
 <!-- CSSs -->
 
@@ -47,6 +46,7 @@
 </head>
 
 <body>
+
 	<div id="wrapper">
 
 		<!-- Navigation -->
@@ -73,9 +73,8 @@
 						<li><a href="#"><i class="fa fa-user-md fa-fw"></i>Manutenção
 								de usuários</a>
 						<li class="divider"></li>
-						<li><a
-							href="${pageContext.request.contextPath}/usuario/logout"><i
-								class="fa fa-sign-out fa-fw"></i>Deslogar</a></li>
+						<li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i>Deslogar</a>
+						</li>
 					</ul> <!-- /.dropdown-user --></li>
 				<!-- /.dropdown -->
 			</ul>
@@ -102,7 +101,7 @@
 						<li><a href="#"><i class="fa fa-search fa-fw"></i>Visualizar<span
 								class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
-								<li><a href="${pageContext.request.contextPath}/produto/visualizar"><i
+								<li><a href="visualizarProduto.jsp"><i
 										class="fa fa-copy fa-fw"></i>Produtos</a></li>
 								<li><a href="visualizarItemEspecifico.jsp"><i
 										class="fa fa-file-o fa-fw"></i>Itens Especificos</a></li>
@@ -111,35 +110,33 @@
 						<li><a href="#"><i class="fa fa-tags  fa-fw"></i>Cadastros
 								Gerais<span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
-								<li><a href="${pageContext.request.contextPath}/produto/adicionar"><i
+								<li><a
+									href="${pageContext.request.contextPath}/produto/adicionar"><i
 										class="fa fa-cube fa-fw"></i>Cadastrar Produto</a></li>
-								<li><a href="${pageContext.request.contextPath}/fabricante/adicionar"><i
+								<li><a
+									href="${pageContext.request.contextPath}/fabricante/adicionar"><i
 										class="fa fa-building fa-fw"></i>Cadastrar Fabricante</a></li>
-								<li><a href="${pageContext.request.contextPath}/categoria/adicionar""><i
+								<li><a
+									href="${pageContext.request.contextPath}/categoria/adicionar"><i
 										class="fa fa-desktop fa-fw"></i>Cadastrar Categoria</a></li>
-								<li><a href="${pageContext.request.contextPath}/departamento/adicionar"><i
+								<li><a
+									href="${pageContext.request.contextPath}/departamento/adicionar"><i
 										class="fa fa-external-link fa-fw"></i>Cadastrar Departamento</a></li>
 								<li><a
 									href="${pageContext.request.contextPath}/unidade/cadastro"><i
 										class="fa fa-institution fa-fw"></i>Cadastrar Unidade</a></li>
-								<li><a
-									href="${pageContext.request.contextPath}/endereco/adicionar"><i
-										class="fa fa-institution fa-fw"></i>Cadastrar endereco</a></li>
 							</ul> <!-- /.nav-second-level --></li>
-					</ul>
-					<!-- /.nav-second-level -->
-					</li>
 
-					<li><a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Relatórios<span
-							class="fa arrow"></span></a>
-						<ul class="nav nav-second-level">
-							<li><a href="relatorioItens.jsp"><i
-									class="fa fa-desktop fa-fw"></i>Relatório de itens</a></li>
-							<li><a href="#"><i class="fa fa-external-link fa-fw"></i>Relatório
-									2</a></li>
-							<li><a href="#"><i class="fa fa-institution fa-fw"></i>Relatório
-									3</a></li>
-						</ul> <!-- /.nav-second-level --></li>
+						<li><a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Relatórios<span
+								class="fa arrow"></span></a>
+							<ul class="nav nav-second-level">
+								<li><a href="#"><i class="fa fa-desktop fa-fw"></i>Relatório
+										por Categorias</a></li>
+								<li><a href="#"><i class="fa fa-external-link fa-fw"></i>Relatório
+										por Departamento</a></li>
+								<li><a href="#"><i class="fa fa-institution fa-fw"></i>Relatório
+										por Unidades</a></li>
+							</ul> <!-- /.nav-second-level --></li>
 					</ul>
 				</div>
 				<!-- /.sidebar-collapse -->
@@ -150,118 +147,51 @@
 		<div id="page-wrapper">
 			<div class="row">
 				<div class="col-lg-12">
-					<h1 class="page-header">Cadastro de Endereco</h1>
+					<h1 class="page-header">Cadastrar Produto</h1>
 				</div>
 			</div>
-
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="panel panel-green">
-						<div class="panel-heading">Pesquisa de Endereco</div>
-						<div class="panel-body">
-
-							<div class="form-group input-group">
-								<input type="text" class="form-control"
-									placeholder="Digite um Endereco para busca"> <span
-									class="input-group-btn">
-									<button class="btn btn-default" type="button">
-										<i class="fa fa-search"></i>
-									</button>
-								</span>
-							</div>
-
-							<form role="form">
-								<div class="form-group">
-									<label>Listar Enderecos cadastrados</label> <select
-										class="form-control">
-										<option>Goiânia - Setor Sul</option>
-										<option>Goiânia - T10</option>
-										<option>Anápolis</option>
-									</select>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-
-
-
 
 
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="panel panel-primary">
-						<div class="panel-heading">Cadastrar novo endereco</div>
+						<div class="panel-heading">Imagem do produto</div>
 						<div class="panel-body">
 							<div class="row">
 								<div class="col-md-12">
-									<form:form role="form"
-										action="${pageContext.request.contextPath}/endereco/adicionar/process"
-										method="POST" commandname="endereco" modelAttribute="endereco">
-										<div class="form-group">
-											<label>CEP</label>
-											<form:input class="form-control" placeholder="Digite o CEP"
-												type="text" required="required" path="cep" />
-										</div>
 
-										<div class="form-group">
-											<label>Logradouro</label>
-											<form:input class="form-control"
-												placeholder="Digite o logradouro" type="text"
-												path="logradouro" />
-										</div>
-										<div class="form-group">
-											<label>Numero</label>
-											<form:input class="form-control" rows="3" path="numero"
-												type="text" />
-										</div>
+									<div class="row">
 
-										<div class="form-group">
-											<label>Bairro</label>
-											<form:input class="form-control" rows="3" path="bairro"
-												type="text" />
-										</div>
-										<div class="form-group">
-											<label>Cidade</label>
-											<form:input class="form-control" rows="3" path="cidade"
-												type="text" />
-										</div>
-										<div class="form-group">
-											<label>Estado</label>
-											<form:select class="form-control" path="estado">
-												<form:option value="GO">GO</form:option>
-												<form:option value="MT">MT</form:option>
-												<form:option value="MS">MS</form:option>
-												<form:option value="DF">DF</form:option>
-												<form:option value="SP">SP</form:option>
-												<form:option value="RJ">RJ</form:option>
-												<form:option value="RS">RS</form:option>
-												<form:option value="MG">MG</form:option>
-												<form:option value="RN">RN</form:option>
-												<form:option value="BA">BA</form:option>
-												<form:option value="AM">AM</form:option>
-												<form:option value="AP">AP</form:option>
-												<form:option value="RO">RO</form:option>
-												<form:option value="PR">PR</form:option>
-												<form:option value="SC">SC</form:option>
-												<form:option value="ES">ES</form:option>
-												<form:option value="PA">PA</form:option>
-												<form:option value="TO">TO</form:option>
-											</form:select>
-											<br> <br>
-											<div class="form-group">
-												<label>Pais</label>
-												<form:select class="form-control" path="pais">
-													<form:option value="Brasil" disbled="true">BR</form:option>
 
-												</form:select>
-											</div>
-											<input type="submit" class="btn btn-outline btn-success"
-												value="Cadastrar">
-											<button type="reset" class="btn btn-outline btn-warning">Editar</button>
-											<button type="submit" class="btn btn-outline btn-danger">Apagar</button>
-									</form:form>
+										<div class="col-lg-6">
+											<form method="post"
+												action="${pageContext.request.contextPath}/produto/upload-foto/${message}.html"
+												enctype="multipart/form-data">
+												<div class="panel panel-info"></div>
+												<div class="panel-heading">Imagem do produto</div>
+												<div class="row"></div>
+
+												<div class="col-lg-12">
+													<div class="panel-body">
+														<center>
+															<a href="#"><img src="${pageContext.request.contextPath}/img/caminhoFoto"
+																width="250" height="250" class="img-thumbnail" /></a>
+														</center>
+													</div>
+													<div class="panel-footer">
+														<div class="form-group">
+															<label>Enviar foto</label> <input type="file" name="foto">
+
+
+														</div>
+													</div>
+												</div>
+												<button type="submit" class="btn btn-outline btn-danger">Enviar
+													Foto</button>
+											</form>
+
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -294,12 +224,11 @@
 
 
 		<!-- /End Scripts -->
-		<c:if test="${message != null}">
-			<c:set var="mess" scope="session" value="${message}" />
+		<c:if test="${messager != null}">
+			<c:set var="mess" scope="session" value="${messager}" />
 			<script>
 				alert("${mess}");
 			</script>
 		</c:if>
-		
 </body>
 </html>

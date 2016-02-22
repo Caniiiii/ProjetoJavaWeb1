@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.sistema.model.Endereco;
-import com.sistema.model.Item;
+import com.sistema.model.Produto;
 import com.sistema.service.EnderecoService;
 
 @Controller

@@ -23,15 +23,14 @@ public class Fabricante {
 	@OneToMany(mappedBy="fabricante")
 	private List <Endereco> endereco;
 	
-    @ManyToMany(mappedBy="fabricantes")
-	private List <Item> itens;
+	@OneToMany(mappedBy = "fabricante")
+	private List<Produto> produtos;
 	private String telefone;
 	private String site;
 	private String observacao;
+	private Integer strEndereco;
 
-	public Fabricante() {
-
-	}
+	
 
 	public Integer getId() {
 		return id_fabricante;
@@ -81,5 +80,15 @@ public class Fabricante {
 	public void setObservacao(String observacao) {
 		this.observacao = observacao;
 	}
+
+	public Integer getStrEndereco() {
+		return strEndereco;
+	}
+
+	public void setStrEndereco(Integer strEndereco) {
+		this.strEndereco = strEndereco;
+	}
+	
+	
 
 }

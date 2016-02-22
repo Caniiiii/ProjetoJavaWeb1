@@ -31,8 +31,8 @@ public class DepartamentoServiceImpl implements DepartamentoService {
 	}
 
 	@Override
-	public void obterDepartamento(int id) {
-		departDAO.obeterDepart(id);
+	public Departamento obterDepartamento(int id) {
+		return departDAO.obeterDepart(id);
 	}
 
 	@Override

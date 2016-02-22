@@ -26,8 +26,10 @@ public class Departamento {
 	@JoinColumn(name="id_unidade")
 	private Unidade unidade;
 	
-	@ManyToMany(mappedBy = "departamentos")
-	private List <Item> itens;
+	@OneToMany
+	@JoinColumn(name="departamento")
+	private List<Item> itens;
+
 	
 	public Integer getId() {
 		return id_departamento;
@@ -63,7 +65,14 @@ public class Departamento {
 	public void setUnidade(Unidade unidade) {
 		this.unidade = unidade;
 	}
-	
+
+	public List<Item> getItens() {
+		return itens;
+	}
+
+	public void setItens(List<Item> itens) {
+		this.itens = itens;
+	}
 	
 	
 }

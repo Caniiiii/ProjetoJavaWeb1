@@ -27,8 +27,8 @@ public class UnidadeImpl implements UnidadeDAO {
       getCurrentSession().save(unidade);		
 	}
 	@Override
-	public Unidade getUnidade(String nome) {
-      return (Unidade) getCurrentSession().get(Unidade.class, nome);		
+	public Unidade obterUnidade(int id) {
+      return (Unidade) getCurrentSession().get(Unidade.class, id);		
 	}
 
 }

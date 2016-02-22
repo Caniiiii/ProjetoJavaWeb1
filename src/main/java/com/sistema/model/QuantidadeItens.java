@@ -17,8 +17,6 @@ public class QuantidadeItens {
 	@GeneratedValue
 	private Integer quantidade_id;
 	
-	@OneToMany(mappedBy="quantidades")
-	private List <Item> itens;
  
 	private int numDeItens;
 	
@@ -29,14 +27,6 @@ public class QuantidadeItens {
 
 	public void setId(Integer id) {
 		this.quantidade_id = id;
-	}
-
-	public Item getItem() {
-		return (Item) itens;
-	}
-
-	public void setItem(List <Item> itens) {
-		this.itens = itens;
 	}
 
 	public int getNumDeItens() {

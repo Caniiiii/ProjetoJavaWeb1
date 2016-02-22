@@ -10,7 +10,7 @@
 
 <head>
 
-<title>Cadastro de Produto - Sistema de gest�o de patrim�nio</title>
+<title>Cadastro de Produto - Sistema de gestão de patrimônio</title>
 
 <!-- CSSs -->
 
@@ -96,13 +96,14 @@
 								</span>
 							</div> <!-- /input-group -->
 						</li>
-						<li><a href="cadastroItem.jsp"><i
+						<li><a
+							href="${pageContext.request.contextPath}/itens/cadastrar"><i
 								class="fa fa-plus-circle fa-fw"></i>Cadastrar Itens</a></li>
 
 						<li><a href="#"><i class="fa fa-search fa-fw"></i>Visualizar<span
 								class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
-								<li><a href="visualizarProduto.jsp"><i
+								<li><a href="${pageContext.request.contextPath}/produto/visualizar"><i
 										class="fa fa-copy fa-fw"></i>Produtos</a></li>
 								<li><a href="visualizarItemEspecifico.jsp"><i
 										class="fa fa-file-o fa-fw"></i>Itens Especificos</a></li>
@@ -111,13 +112,17 @@
 						<li><a href="#"><i class="fa fa-tags  fa-fw"></i>Cadastros
 								Gerais<span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
-								<li><a href="cadastroProduto.jsp"><i
+								<li><a
+									href="${pageContext.request.contextPath}/produto/adicionar"><i
 										class="fa fa-cube fa-fw"></i>Cadastrar Produto</a></li>
-								<li><a href="cadastroFabricante.jsp"><i
+								<li><a
+									href="${pageContext.request.contextPath}/fabricante/adicionar"><i
 										class="fa fa-building fa-fw"></i>Cadastrar Fabricante</a></li>
-								<li><a href="cadastroCategoria.jsp"><i
+								<li><a
+									href="${pageContext.request.contextPath}/categoria/adicionar""><i
 										class="fa fa-desktop fa-fw"></i>Cadastrar Categoria</a></li>
-								<li><a href="${pageContext.request.contextPath}/departamento/adicionar"><i
+								<li><a
+									href="${pageContext.request.contextPath}/departamento/adicionar"><i
 										class="fa fa-external-link fa-fw"></i>Cadastrar Departamento</a></li>
 								<li><a
 									href="${pageContext.request.contextPath}/unidade/cadastro"><i
@@ -134,10 +139,10 @@
 							class="fa arrow"></span></a>
 						<ul class="nav nav-second-level">
 							<li><a href="relatorioItens.jsp"><i
-									class="fa fa-desktop fa-fw"></i>Relat�rio de itens</a></li>
-							<li><a href="#"><i class="fa fa-external-link fa-fw"></i>Relat�rio
+									class="fa fa-desktop fa-fw"></i>Relatório de itens</a></li>
+							<li><a href="#"><i class="fa fa-external-link fa-fw"></i>Relatório
 									2</a></li>
-							<li><a href="#"><i class="fa fa-institution fa-fw"></i>Relat�rio
+							<li><a href="#"><i class="fa fa-institution fa-fw"></i>Relatório
 									3</a></li>
 						</ul> <!-- /.nav-second-level --></li>
 					</ul>
@@ -154,36 +159,6 @@
 			</div>
 
 
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="panel panel-green">
-						<div class="panel-heading">Pesquisa de Produto</div>
-						<div class="panel-body">
-
-							<div class="form-group input-group">
-								<input type="text" class="form-control"
-									placeholder="Digite o nome de um produto para busca"> <span
-									class="input-group-btn">
-									<button class="btn btn-default" type="button">
-										<i class="fa fa-search"></i>
-									</button>
-								</span>
-							</div>
-
-							<div class="form-group input-group">
-								<input type="number" class="form-control"
-									placeholder="Digite um código de produto para busca"> <span
-									class="input-group-btn">
-									<button class="btn btn-default" type="button">
-										<i class="fa fa-search"></i>
-									</button>
-								</span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
 
 			<div class="row">
 				<div class="col-lg-12">
@@ -194,39 +169,46 @@
 								<div class="col-md-12">
 									<div class="row">
 										<div class="col-lg-6">
-											<div class="row">
-												<div class="col-lg-4">
-													<form:form role="form"
-														action="${pageContext.request.contextPath}/item/cadastro/process"
-														method="GET" commandname="item" modelAttribute="item">
-														<div class="form-group">
+											<form:form role="form"
+												action="${pageContext.request.contextPath}/itens/cadastrar/process"
+												method="GET" commandname="item" modelAttribute="item">
+												<div class="form-group">
+													<div class="row">
+														<div class="col-lg-4">
 
-															<label>Código do item</label>
-															<form:input type="number" class="form-control"
-																placeholder="Digite o código do item"
-																required="required" path="codigo" />
+															<label>Produto</label>
+															<form:select class="form-control" path="prodId">
+																<c:forEach var="produto" items="${produtos}">
+																	<form:option value="${produto.id}">${produto.nomeProduto}</form:option>
+																	
+																</c:forEach>
+					
+															</form:select>
 														</div>
-													</form:form>
-												</div>
+													</div>
+													<div class="row">
+														<div class="col-lg-4">
 
-												<div class="col-lg-4">
-													<form:form role="form"
-														action="${pageContext.request.contextPath}/item/cadastro/process"
-														method="GET" commandname="item" modelAttribute="item">
+															<label>Codigo de entrada</label>
+															<form:input placeholder="Código de entrada" type = "text" class="form-control" path="codigo" />
+																
+																	
+														</div>
+													</div>
+
+													<div class="col-lg-4">
+
 														<div class="form-group">
 
 															<label>N da plaqueta</label>
-															<form:input type="number" class="form-control"
+															<form:input type="text" class="form-control"
 																placeholder="Número da plaqueta" required="required"
 																path="numeroPlaqueta" />
 														</div>
-													</form:form>
-												</div>
+													</div>
 
-												<div class="col-lg-4">
-													<form:form role="form"
-														action="${pageContext.request.contextPath}/item/cadastro/process"
-														method="GET" commandname="item" modelAttribute="item">
+													<div class="col-lg-4">
+
 														<div class="form-group">
 
 															<label>Data de Compra</label>
@@ -234,107 +216,63 @@
 																placeholder="Data de compra" require="required"
 																path="dataDeCompra" />
 														</div>
-													</form:form>
-												</div>
-											</div>
+													</div>
 
-											<div class="row">
-												<div class="col-lg-4">
-													<form:form role="form"
-														action="${pageContext.request.contextPath}/item/cadastro/process"
-														method="GET" commandname="item" modelAttribute="item">
+												</div>
+
+												<div class="row">
+													<div class="col-lg-4">
+
 														<div class="form-group">
 															<label>N da nota</label>
-															<form:input type="number" class="form-control"
+															<form:input type="text" class="form-control"
 																placeholder="Digite o numero da nota"
 																required="required" path="notaFiscalPdf" />
 														</div>
-													</form:form>
-												</div>
+													</div>
 
-												<div class="col-lg-4">
-													<form:form role="form"
-														action="${pageContext.request.contextPath}/item/cadastro/process"
-														method="GET" commandname="item" modelAttribute="item">
+													<div class="col-lg-4">
+
 														<div class="form-group">
 															<label>Quantidade</label>
 															<form:input type="number" class="form-control"
 																placeholder="Digite a quantidade de itens"
 																required="required" path="quantidade" />
 														</div>
-													</form:form>
 
-												</div>
-												<div class="col-lg-4">
+													</div>
+													<div class="col-lg-4">
 
-													<form:form role="form"
-														action="${pageContext.request.contextPath}/item/cadastro/process"
-														method="GET" commandname="item" modelAttribute="item">
+
 														<div class="form-group">
 															<label>Situação</label>
 															<form:select class="form-control" path="situacao">
-																<form:option value="#">Novo</form:option>
-																<form:option value="#">Usado</form:option>
-																<form:option value="#">Perecível</form:option>
+																<form:option value="novo">Novo</form:option>
+																<form:option value="usado">Usado</form:option>
+																<form:option value="perecível">Perecível</form:option>
 															</form:select>
 														</div>
-													</form:form>
-												</div>
-											</div>
-
-											<form:form role="form"
-												action="${pageContext.request.contextPath}/item/cadastro/process"
-												method="GET" commandname="item" modelAttribute="item">
-
-												<div class="form-group">
-													<label>Nome do item</label>
-													<form:input class="form-control"
-														placeholder="Digite o nome do item" required="required"
-														path="nomeItem" />
+													</div>
 												</div>
 
-												<div class="form-group">
-													<label>Fabricante</label>
-													<form:select class="form-control" path="fabricante">
-														<form:option value="#">Apple</form:option>
-														<form:option value="#">LG</form:option>
-														<form:option value="#">Outros</form:option>
-													</form:select>
-												</div>
-												<div class="form-group">
-													<label>Tempo de garantia</label>
-													<form:select class="form-control" path="tempoGarantia">
-														<form:option value="#">1 ano</form:option>
-														<form:option value="#">2 anos</form:option>
-														<form:option value="#">3 anos</form:option>
-														<form:option value="#">4 anos</form:option>
-														<form:option value="#">5 anos</form:option>
-														<form:option value="#">Ilimitada</form:option>
-														<form:option value="#">Sem garantia</form:option>
-													</form:select>
-												</div>
-												<div class="form-group">
-													<label>Categoria</label>
-													<form:select class="form-control" path="categoria">
-														<form:option value="#">Eletronico</form:option>
-														<form:option value="#">Mobilia</form:option>
-													</form:select>
-												</div>
+
 												<div class="form-group">
 													<label>Unidade</label>
-													<form:select class="form-control" path="unidades">
-														<form:option value="#">Goiãnia - Setor Sul</form:option>
-														<form:option value="#">Goiãnia - T10</form:option>
-														<form:option value="#">Anápolis</form:option>
+													<form:select class="form-control" path="uniId">
+														<c:forEach var="unidade" items="${unidades}">
+															<form:option value="${unidade.id}">${unidade.nomeUnidade }</form:option>
+														</c:forEach>
 													</form:select>
 												</div>
 												<div class="form-group">
 													<label>Departamento</label>
-													<form:select class="form-control" path="departamento">
-														<form:option value="#">Financeiro</form:option>
-														<form:option value="#">Assistência</form:option>
-														<form:option value="#">Salão</form:option>
+
+													<form:select class="form-control" path="departId">
+														<c:forEach var="depart" items="${departs}">
+															<form:option value="${depart.id}">${depart.nomeDepartamento}</form:option>
+														</c:forEach>
 													</form:select>
+
 												</div>
 												<div class="form-group">
 													<label>Responsável</label>
@@ -347,6 +285,8 @@
 													<form:textarea class="form-control" rows="3"
 														path="observacao"></form:textarea>
 												</div>
+												<button type="submit" class="btn btn-outline btn-success">Cadastrar</button>
+
 											</form:form>
 										</div>
 										<div class="col-lg-6">
@@ -356,7 +296,7 @@
 												<div class="panel-body">
 													<center>
 														<a href="#"><img
-															src="http://iacom.s8.com.br/produtos/01/00/item/111804/8/111804870G1.jpg"
+															src="${pageContext.request.contextPath}/resources/images/batman.jpg"
 															width="250" height="250" class="img-thumbnail" /></a>
 													</center>
 												</div>
@@ -375,8 +315,7 @@
 													</div>
 												</div>
 											</div>
-											<button type="submit" class="btn btn-outline btn-success">Enviar</button>
-											<button type="reset" class="btn btn-outline btn-warning">Resetar</button>
+											
 										</div>
 									</div>
 								</div>
@@ -413,8 +352,12 @@
 
 
 	<!-- /End Scripts -->
-
-
+	<c:if test="${message != null}">
+		<c:set var="mess" scope="session" value="${message}" />
+		<script>
+			alert("${mess}");
+		</script>
+	</c:if>
 
 </body>
 </html>

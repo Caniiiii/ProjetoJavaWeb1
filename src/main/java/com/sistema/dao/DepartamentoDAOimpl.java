@@ -38,6 +38,8 @@ public class DepartamentoDAOimpl implements DepartamentoDAO {
        departParaAtualizar.setTelefone(depart.getTelefone());
        departParaAtualizar.setUnidade(depart.getUnidade());
        departParaAtualizar.setObservacao(depart.getObservacao());
+       
+       getCurrentSession().update(departParaAtualizar);
 	}
 
 	@Override

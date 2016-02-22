@@ -43,6 +43,12 @@
     <![endif]-->
 
 <!-- /End CSS -->
+<script>
+	function adicionarDepartamento(list, item) {
+		list.add(item);
+		return list;
+	}
+</script>
 
 </head>
 
@@ -95,13 +101,14 @@
 								</span>
 							</div> <!-- /input-group -->
 						</li>
-						<li><a href="cadastroItem.jsp"><i
+						<li><a
+							href="${pageContext.request.contextPath}/itens/cadastrar"><i
 								class="fa fa-plus-circle fa-fw"></i>Cadastrar Itens</a></li>
 
 						<li><a href="#"><i class="fa fa-search fa-fw"></i>Visualizar<span
 								class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
-								<li><a href="visualizarProduto.jsp"><i
+								<li><a href="${pageContext.request.contextPath}/produto/visualizar"><i
 										class="fa fa-copy fa-fw"></i>Produtos</a></li>
 								<li><a href="visualizarItemEspecifico.jsp"><i
 										class="fa fa-file-o fa-fw"></i>Itens Especificos</a></li>
@@ -110,13 +117,17 @@
 						<li><a href="#"><i class="fa fa-tags  fa-fw"></i>Cadastros
 								Gerais<span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
-								<li><a href="cadastroProduto.jsp"><i
+								<li><a
+									href="${pageContext.request.contextPath}/produto/adicionar"><i
 										class="fa fa-cube fa-fw"></i>Cadastrar Produto</a></li>
-								<li><a href="cadastroFabricante.jsp"><i
+								<li><a
+									href="${pageContext.request.contextPath}/fabricante/adicionar"><i
 										class="fa fa-building fa-fw"></i>Cadastrar Fabricante</a></li>
-								<li><a href="cadastroCategoria.jsp"><i
+								<li><a
+									href="${pageContext.request.contextPath}/categoria/adicionar""><i
 										class="fa fa-desktop fa-fw"></i>Cadastrar Categoria</a></li>
-								<li><a href="${pageContext.request.contextPath}/departamento/adicionar"><i
+								<li><a
+									href="${pageContext.request.contextPath}/departamento/adicionar"><i
 										class="fa fa-external-link fa-fw"></i>Cadastrar Departamento</a></li>
 								<li><a
 									href="${pageContext.request.contextPath}/unidade/cadastro"><i
@@ -197,7 +208,7 @@
 								<div class="col-md-12">
 									<form:form role="form"
 										action="${pageContext.request.contextPath}/unidade/cadastro/process"
-										method="POST" commandname="unidade" modelAttribute="unidade">
+										method="GET" commandname="unidade" modelAttribute="unidade" modelAtribute="departs">
 										<div class="form-group">
 											<label>Nome do Unidade</label>
 											<form:input class="form-control"
@@ -212,17 +223,27 @@
 												path="telefone" />
 										</div>
 										<div class="form-group">
-											<label>Endereco</label><br>
-											<span>CEP</span>
+											<label>Endereco</label><br> <span>CEP</span>
 											<form:select class="form-control" path="strEndereco">
 												<c:forEach var="endereco" items="${enderecos}">
 													<form:option value="${endereco.id}">${endereco.cep}</form:option>
 												</c:forEach>
 											</form:select>
 										</div>
+										<!--  
 										<div class="form-group">
+											<label>Departamentos</label><br>
+											  <c:forEach var="depart" items="${departs}">
+                                                 <form:checkbox
+													path="departamentos" value="${depart}" /> <span>${depart.nomeDepartamento}</span>
+												<br>
+												</c:forEach>
+                                               </div>
+                                          -->
+                                         <div class="form-group">
 											<label>Observação</label>
-											<form:textarea class="form-control" rows="3" path="observacao"></form:textarea>
+											<form:textarea class="form-control" rows="3"
+												path="observacao"></form:textarea>
 										</div>
 										<input type="submit" class="btn btn-outline btn-success"
 											value="Cadastrar">
@@ -262,7 +283,11 @@
 
 
 		<!-- /End Scripts -->
-		<script>alert("${message}");</script>
-		
+		<c:if test="${message != null}">
+			<c:set var="mess" scope="session" value="${message}" />
+			<script>
+				alert("${mess}");
+			</script>
+		</c:if>
 </body>
 </html>

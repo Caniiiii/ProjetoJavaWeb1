@@ -1,3 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<%@ page isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 
@@ -88,12 +94,13 @@
 								</span>
 							</div> <!-- /input-group -->
 						</li>
-						<li><a href="cadastroItem.jsp"><i
+						<li><a
+							href="${pageContext.request.contextPath}/itens/cadastrar"><i
 								class="fa fa-plus-circle fa-fw"></i>Cadastrar Itens</a></li>
 
 						<li><a href="#"><i class="fa fa-search fa-fw"></i>Visualizar<span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
-								<li><a href="visualizarProduto.jsp"><i
+								<li><a href="${pageContext.request.contextPath}/produto/visualizar"><i
 										class="fa fa-copy fa-fw"></i>Produtos</a></li>
 								<li><a href="visualizarItemEspecifico.jsp"><i
 										class="fa fa-file-o fa-fw"></i>Itens Especificos</a></li>
@@ -102,17 +109,20 @@
 						<li><a href="#"><i class="fa fa-tags  fa-fw"></i>Cadastros
 								Gerais<span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
-							<li><a href="cadastroProduto.jsp"><i
+							<li><a href="${pageContext.request.contextPath}/produto/adicionar"><i
 										class="fa fa-cube fa-fw"></i>Cadastrar Produto</a></li>
-								<li><a href="cadastroFabricante.jsp"><i
+								<li><a href="${pageContext.request.contextPath}/fabricante/adicionar"><i
 										class="fa fa-building fa-fw"></i>Cadastrar Fabricante</a></li>
-								<li><a href="cadastroCategoria.jsp"><i
+								<li><a href="${pageContext.request.contextPath}/categoria/adicionar"><i
 										class="fa fa-desktop fa-fw"></i>Cadastrar Categoria</a></li>
 								<li><a href="${pageContext.request.contextPath}/departamento/adicionar"><i
 										class="fa fa-external-link fa-fw"></i>Cadastrar Departamento</a></li>
 								<li><a
 									href="${pageContext.request.contextPath}/unidade/cadastro"><i
 										class="fa fa-institution fa-fw"></i>Cadastrar Unidade</a></li>
+										<li><a
+									href="${pageContext.request.contextPath}/endereco/adicionar"><i
+										class="fa fa-institution fa-fw"></i>Cadastrar endereco</a></li>
 							</ul> <!-- /.nav-second-level --></li>
 
 						<li><a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Relatórios<span
@@ -150,79 +160,66 @@
 
 									<div class="row">
 										<div class="col-lg-6">
+										<form:form role="form"
+										action="${pageContext.request.contextPath}/produto/adicionar/process"
+										method="POST" commandname="produto" modelAttribute="produto">
 											<div class="row">
+											
 												<div class="col-lg-12">
-													<form role="form">
+													
 														<div class="form-group">
 
-															<label>Código do produto</label> <input type="number"
+															<label>Código do produto</label> <form:input type="text"
 																class="form-control"
-																placeholder="Digite o código do produto">
+																placeholder="Digite o código do produto"  path="codigo"/>
 														</div>
-													</form>
 												</div>
+												
 											</div>
-
+                                            
 											<div class="row"></div>
-											<form role="form">
+											
 												<div class="form-group">
-													<label>Nome do produto</label> <input class="form-control"
-														placeholder="Digite o nome do produto">
+													<label>Nome do produto</label> <form:input class="form-control"
+														placeholder="Digite o nome do produto" required="required" path="nomeProduto"/>
 												</div>
 
 
 												<div class="form-group">
-													<label>Fábricante</label> <select class="form-control">
-														<option>Apple</option>
-														<option>LG</option>
-														<option>Outros</option>
-													</select>
+													<label>Fábricante</label> <form:select class="form-control" path="caminhoFab">
+													    <c:forEach var="fab" items="${fabricantes}">
+														<form:option value="${fab.id}">${fab.nomeFabricante }</form:option>
+														</c:forEach>
+													</form:select>
 												</div>
 												<div class="form-group">
-													<label>Tempo de garantia</label> <select
-														class="form-control">
-														<option>1 ano</option>
-														<option>2 anos</option>
-														<option>3 anos</option>
-														<option>4 anos</option>
-														<option>5 anos</option>
-														<option>Ilimitada</option>
-														<option>Sem garantia</option>
-													</select>
+													<label>Tempo de garantia</label> <form:select
+														class="form-control" path="tempoGarantia">
+														<form:option value="1 ano">1 ano</form:option>
+														<form:option value="2 anos">2 anos</form:option>
+														<form:option value="3 anos">3 anos</form:option>
+														<form:option value="4 anos">4 anos</form:option>
+														<form:option value="5 anos">5 anos</form:option>
+														<form:option value="Ilimitada">Ilimitada</form:option>
+														<form:option value="Sem garantia">Sem garantia</form:option>
+													</form:select>
 												</div>
 												<div class="form-group">
-													<label>Categoria</label> <select class="form-control">
-														<option>Eletronico</option>
-														<option>Mobilia</option>
-													</select>
+													<label>Categoria</label> <form:select class="form-control" path="caminhoCat">
+													     <c:forEach var="cat" items="${categorias }">
+														<option value="${cat.id }">${cat.nomeCategoria }</option>
+														 </c:forEach>
+													</form:select>
 												</div>
 												<div class="form-group">
 													<label>Observação</label>
-													<textarea class="form-control" rows="3"></textarea>
+													<form:textarea class="form-control" rows="3" path="observacao"></form:textarea>
 												</div>
-											</form>
+										       <button type="submit" class="btn btn-outline btn-success">Cadastrar</button>
+												
+											</form:form>
 										</div>
-										<div class="col-lg-6">
-
-											<div class="panel panel-info">
-												<div class="panel-heading">Imagem do produto</div>
-												<div class="panel-body">
-													<center>
-														<a href="#"><img
-															src="http://iacom.s8.com.br/produtos/01/00/item/111804/8/111804870G1.jpg"
-															width="250" height="250" class="img-thumbnail" /></a>
-													</center>
-												</div>
-												<div class="panel-footer">
-													<div class="form-group">
-														<label>Enviar foto</label> <input type="file">
-													</div>
-												</div>
-											</div>
-											<button type="submit" class="btn btn-outline btn-success">Enviar</button>
-											<button type="reset" class="btn btn-outline btn-warning">Resetar</button>
-											<button type="submit" class="btn btn-outline btn-danger">Editar</button>
-										</div>
+										
 									</div>
 								</div>
 							</div>
@@ -256,5 +253,11 @@
 
 
 		<!-- /End Scripts -->
+		<c:if test="${message != null}">
+			<c:set var="mess" scope="session" value="${message}" />
+			<script>
+				alert("${mess}");
+			</script>
+		</c:if>
 </body>
 </html>

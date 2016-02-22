@@ -1,3 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<%@ page isELIgnored="false"%>
+
 <!DOCTYPE html>
 <html>
 
@@ -88,13 +95,14 @@
 								</span>
 							</div> <!-- /input-group -->
 						</li>
-						<li><a href="cadastroItem.jsp"><i
+						<li><a
+							href="${pageContext.request.contextPath}/itens/cadastrar"><i
 								class="fa fa-plus-circle fa-fw"></i>Cadastrar Itens</a></li>
 
 						<li><a href="#"><i class="fa fa-search fa-fw"></i>Visualizar<span
 								class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
-								<li><a href="visualizarProduto.jsp"><i
+								<li><a href="${pageContext.request.contextPath}/produto/visualizar"><i
 										class="fa fa-copy fa-fw"></i>Produtos</a></li>
 								<li><a href="visualizarItemEspecifico.jsp"><i
 										class="fa fa-file-o fa-fw"></i>Itens Especificos</a></li>
@@ -103,11 +111,11 @@
 						<li><a href="#"><i class="fa fa-tags  fa-fw"></i>Cadastros
 								Gerais<span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
-								<li><a href="cadastroProduto.jsp"><i
+								<li><a href="${pageContext.request.contextPath}/produto/adicionar"><i
 										class="fa fa-cube fa-fw"></i>Cadastrar Produto</a></li>
-								<li><a href="cadastroFabricante.jsp"><i
+								<li><a href="${pageContext.request.contextPath}/fabricante/adicionar"><i
 										class="fa fa-building fa-fw"></i>Cadastrar Fabricante</a></li>
-								<li><a href="cadastroCategoria.jsp"><i
+								<li><a href="${pageContext.request.contextPath}/categoria/adicionar""><i
 										class="fa fa-desktop fa-fw"></i>Cadastrar Categoria</a></li>
 								<li><a href="${pageContext.request.contextPath}/departamento/adicionar"><i
 										class="fa fa-external-link fa-fw"></i>Cadastrar Departamento</a></li>
@@ -165,9 +173,18 @@
 								<div class="form-group">
 									<label>Listar fabricantes cadastrados</label> <select
 										class="form-control">
-										<option>Apple</option>
-										<option>LG</option>
-										<option>Fabricação Propria</option>
+									    <c:set var="fabs" scope="session" value="${fabricantes}"/>
+										
+										<c:choose>
+										<c:when test="${fabs.isEmpty()}">
+										     <option>Nem um fabricante cadastrado!</option>
+										</c:when>
+										<c:otherwise>
+										<c:forEach var="fab" items="${fabricantes}">
+											<option value="${fab.nomeFabricante}">${fab.nomeFabricante}</option>
+										</c:forEach>
+										</c:otherwise>
+										</c:choose>
 									</select>
 								</div>
 							</form>
@@ -182,32 +199,38 @@
 						<div class="panel-body">
 							<div class="row">
 								<div class="col-md-12">
-									<form role="form">
+									<form:form role="form"
+										action="${pageContext.request.contextPath}/fabricante/adicionar/process"
+										method="POST" commandname="fabricante" modelAttribute="fabricante">
 										<div class="form-group">
-											<label>Nome do fabricante</label> <input class="form-control"
-												placeholder="Digite o nome do fabricante" type="text">
+											<label>Nome do fabricante</label> <form:input class="form-control"
+												placeholder="Digite o nome do fabricante" type="text" required="required"  path="nomeFabricante" />
 										</div>
 										<div class="form-group">
-											<label>Endereço</label> <input class="form-control"
-												placeholder="Digite o endereço do fabricante" type="text">
+											<label>Endereco</label><br> <span>CEP</span>
+											<form:select class="form-control" path="strEndereco">
+												<c:forEach var="endereco" items="${enderecos}">
+													<form:option value="${endereco.id}">${endereco.cep}</form:option>
+												</c:forEach>
+											</form:select>
 										</div>
 
 										<div class="form-group">
-											<label>Telefone</label> <input class="form-control"
-												placeholder="Digite o telefone do fabricante" type="number">
+											<label>Telefone</label> <form:input class="form-control"
+												placeholder="Digite o telefone do fabricante" type="text" required="required" path="telefone"/>
 										</div>
 										<div class="form-group">
-											<label>Site</label> <input class="form-control"
-												placeholder="Digite o site do fabricante" type="text">
+											<label>Site</label> <form:input class="form-control"
+												placeholder="Digite o site do fabricante" type="text" required="require" path="site" />
 										</div>
 										<div class="form-group">
 											<label>Observação</label>
-											<textarea class="form-control" rows="3"></textarea>
+											<form:textarea class="form-control" rows="3" path="observacao"></form:textarea>
 										</div>
 										<button type="submit" class="btn btn-outline btn-success">Cadastrar</button>
 										<button type="reset" class="btn btn-outline btn-warning">Editar</button>
 										<button type="submit" class="btn btn-outline btn-danger">Apagar</button>
-									</form>
+									</form:form>
 								</div>
 							</div>
 						</div>
@@ -238,7 +261,12 @@
 			src="https://cdnjs.cloudflare.com/ajax/libs/startbootstrap-sb-admin-2/1.0.7/js/sb-admin-2.js"></script>
 
 
-
 		<!-- /End Scripts -->
+		<c:if test="${message != null}">
+			<c:set var="mess" scope="session" value="${message}" />
+			<script>
+				alert("${mess}");
+			</script>
+		</c:if>
 </body>
 </html>

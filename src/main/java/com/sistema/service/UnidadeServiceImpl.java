@@ -26,8 +26,8 @@ public class UnidadeServiceImpl implements UnidadeService {
 	}
 
 	@Override
-	public Unidade getUnidade(String nome) {
-       return uniDAO.getUnidade(nome);		
+	public Unidade obterUnidade(int id) {
+       return uniDAO.obterUnidade(id);		
 	}
 
 }
