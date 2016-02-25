@@ -123,11 +123,11 @@ public class Produto {
 		this.caminhoCat = caminhoCat;
 	}
 
-	public List<Item> getProdutos() {
+	public List<Item> getItens() {
 		return itens;
 	}
 
-	public void setProdutos(List<Item> Itens) {
+	public void setItens(List<Item> Itens) {
 		this.itens = Itens;
 	}
 

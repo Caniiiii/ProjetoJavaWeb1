@@ -9,7 +9,7 @@
 
 <head>
 
-<title>Editar Produto - Sistema de gestão de património</title>
+<title>Cadastro de Produto - Sistema de gestão de património</title>
 
 <!-- CSSs -->
 
@@ -130,17 +130,24 @@
 									href="${pageContext.request.contextPath}/endereco/adicionar"><i
 										class="fa fa-institution fa-fw"></i>Cadastrar endereco</a></li>
 							</ul> <!-- /.nav-second-level --></li>
+					</ul>
+					<!-- /.nav-second-level -->
+					</li>
 
-						<li><a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Relatórios<span
-								class="fa arrow"></span></a>
-							<ul class="nav nav-second-level">
-								<li><a href="${pageContext.request.contextPath}/relatorio/categoria"><i class="fa fa-desktop fa-fw"></i>Relatório
-										por Categorias</a></li>
-								<li><a href="href="${pageContext.request.contextPath}/relatorio/departamento"><i class="fa fa-external-link fa-fw"></i>Relatório
-										por Departamento</a></li>
-								<li><a href="href="${pageContext.request.contextPath}/relatorio/unidade"><i class="fa fa-institution fa-fw"></i>Relatório
-										por Unidades</a></li>
-							</ul> <!-- /.nav-second-level --></li>
+					<li><a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Relatórios<span
+							class="fa arrow"></span></a>
+						<ul class="nav nav-second-level">
+							<li><a
+								href="${pageContext.request.contextPath}/relatorio/categoria"><i
+									class="fa fa-desktop fa-fw"></i>Relatório por Categorias</a></li>
+							<li><a
+								href="${pageContext.request.contextPath}/relatorio/departamento"><i
+									class="fa fa-external-link fa-fw"></i>Relatório por
+									Departamento</a></li>
+							<li><a
+								href="${pageContext.request.contextPath}/relatorio/unidade"><i
+									class="fa fa-institution fa-fw"></i>Relatório por Unidades</a></li>
+						</ul> <!-- /.nav-second-level --></li>
 					</ul>
 				</div>
 				<!-- /.sidebar-collapse -->
@@ -149,114 +156,7 @@
 		</nav>
 
 		<div id="page-wrapper">
-			<div class="row">
-				<div class="col-lg-12">
-					<h1 class="page-header">Cadastrar Produto</h1>
-				</div>
-			</div>
-
-
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="panel panel-primary">
-						<div class="panel-heading">Cadastrar Produto</div>
-						<div class="panel-body">
-							<div class="row">
-								<div class="col-md-12">
-
-									<div class="row">
-										<div class="col-lg-6">
-											<form:form method="POST" commandname="produto"
-												modelAttribute="produto"
-												action="${pageContext.request.contextPath}/produto/edita/${produto.id}.html">
-												<div class="row">
-
-													<div class="col-lg-12">
-
-														<div class="form-group">
-
-															<label>Código do produto</label>
-															<form:input type="text" class="form-control"
-																placeholder="Digite o código do produto" path="codigo" />
-														</div>
-													</div>
-
-												</div>
-
-												<div class="row"></div>
-
-												<div class="form-group">
-													<label>Nome do produto</label>
-													<form:input class="form-control"
-														placeholder="Digite o nome do produto" required="required"
-														path="nomeProduto" />
-												</div>
-
-
-												<div class="form-group">
-													<label>Fábricante</label>
-													<form:select class="form-control" path="caminhoFab">
-														<c:forEach var="fab" items="${fabricantes}">
-															<form:option value="${fab.id}">${fab.nomeFabricante }</form:option>
-														</c:forEach>
-													</form:select>
-												</div>
-												<div class="form-group">
-													<label>Tempo de garantia</label>
-													<form:select class="form-control" path="tempoGarantia">
-														<form:option value="1 ano">1 ano</form:option>
-														<form:option value="2 anos">2 anos</form:option>
-														<form:option value="3 anos">3 anos</form:option>
-														<form:option value="4 anos">4 anos</form:option>
-														<form:option value="5 anos">5 anos</form:option>
-														<form:option value="Ilimitada">Ilimitada</form:option>
-														<form:option value="Sem garantia">Sem garantia</form:option>
-													</form:select>
-												</div>
-												<div class="form-group">
-													<label>Categoria</label>
-													<form:select class="form-control" path="caminhoCat">
-														<c:forEach var="cat" items="${categorias }">
-															<option value="${cat.id }">${cat.nomeCategoria }</option>
-														</c:forEach>
-													</form:select>
-												</div>
-												<div class="form-group">
-													<label>Observação</label>
-													<form:textarea class="form-control" rows="3"
-														path="observacao"></form:textarea>
-												</div>
-												<button type="submit" class="btn btn-outline btn-success">Atualizar</button>
-
-											</form:form>
-										</div>
-										<div class="col-lg-6">
-
-											<div class="panel panel-info">
-												<div class="panel-heading">Imagem do produto</div>
-												<div class="panel-body">
-													<center>
-														<a href="#"><img src="foto.jpg" width="250"
-															height="250" class="img-thumbnail" /></a>
-													</center>
-												</div>
-												<div class="panel-footer">
-													<div class="form-group">
-														<label>Enviar foto</label> <input type="file">
-													</div>
-												</div>
-											</div>
-											<button type="submit" class="btn btn-outline btn-success">Enviar</button>
-											<button type="reset" class="btn btn-outline btn-warning">Resetar</button>
-											<button type="submit" class="btn btn-outline btn-danger">Editar</button>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+			<h1 style="color:blue">${message}</h1>
 		</div>
 		<!-- /#wrapper -->
 
@@ -283,11 +183,5 @@
 
 
 		<!-- /End Scripts -->
-		<c:if test="${message != null}">
-			<c:set var="mess" scope="session" value="${message}" />
-			<script>
-				alert("${mess}");
-			</script>
-		</c:if>
 </body>
 </html>

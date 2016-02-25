@@ -130,11 +130,11 @@
 						<li><a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Relatórios<span
 								class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
-								<li><a href="#"><i class="fa fa-desktop fa-fw"></i>Relatório
+								<li><a href="${pageContext.request.contextPath}/relatorio/categoria"><i class="fa fa-desktop fa-fw"></i>Relatório
 										por Categorias</a></li>
-								<li><a href="#"><i class="fa fa-external-link fa-fw"></i>Relatório
+								<li><a href="href="${pageContext.request.contextPath}/relatorio/departamento"><i class="fa fa-external-link fa-fw"></i>Relatório
 										por Departamento</a></li>
-								<li><a href="#"><i class="fa fa-institution fa-fw"></i>Relatório
+								<li><a href="href="${pageContext.request.contextPath}/relatorio/unidade"><i class="fa fa-institution fa-fw"></i>Relatório
 										por Unidades</a></li>
 							</ul> <!-- /.nav-second-level --></li>
 					</ul>

@@ -13,7 +13,7 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 	      Object controller) throws Exception {
 
 	      String uri = request.getRequestURI();
-	      if(uri.endsWith("/") || 
+	      if(uri.endsWith("/usuario/login") || 
 	          uri.endsWith("/usuario/efetuarLogin") || 
 	              uri.contains("resources")){
 	        return true;
@@ -23,7 +23,7 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 	        return true;
 	      }
 	      
-	      response.sendRedirect("/");
+	      response.sendRedirect("/usuario/login");
 	      return false;
 	
 }

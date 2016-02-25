@@ -11,8 +11,7 @@ public class ControllerLink {
 
 	@RequestMapping(value = "/")
 	public ModelAndView mainPage() {
-		ModelAndView modelAndView = new ModelAndView("login");
-		modelAndView.addObject("usuario", new Usuario());
+		ModelAndView modelAndView = new ModelAndView("index");
 
 		return  modelAndView;
 	}

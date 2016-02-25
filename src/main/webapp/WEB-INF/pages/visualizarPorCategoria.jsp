@@ -1,3 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<%@ page isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 
@@ -95,7 +101,8 @@
 						<li><a href="#"><i class="fa fa-search fa-fw"></i>Visualizar<span
 								class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
-								<li><a href="${pageContext.request.contextPath}/produto/visualizar"><i
+								<li><a
+									href="${pageContext.request.contextPath}/produto/visualizar"><i
 										class="fa fa-copy fa-fw"></i>Produtos</a></li>
 								<li><a href="visualizarItemEspecifico.jsp"><i
 										class="fa fa-file-o fa-fw"></i>Itens Especificos</a></li>
@@ -104,13 +111,17 @@
 						<li><a href="#"><i class="fa fa-tags  fa-fw"></i>Cadastros
 								Gerais<span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
-								<li><a href="${pageContext.request.contextPath}/produto/adicionar"><i
+								<li><a
+									href="${pageContext.request.contextPath}/produto/adicionar"><i
 										class="fa fa-cube fa-fw"></i>Cadastrar Produto</a></li>
-								<li><a href="${pageContext.request.contextPath}/fabricante/adicionar"><i
+								<li><a
+									href="${pageContext.request.contextPath}/fabricante/adicionar"><i
 										class="fa fa-building fa-fw"></i>Cadastrar Fabricante</a></li>
-								<li><a href="${pageContext.request.contextPath}/categoria/adicionar""><i
+								<li><a
+									href="${pageContext.request.contextPath}/categoria/adicionar"><i
 										class="fa fa-desktop fa-fw"></i>Cadastrar Categoria</a></li>
-								<li><a href="${pageContext.request.contextPath}/departamento/adicionar"><i
+								<li><a
+									href="${pageContext.request.contextPath}/departamento/adicionar"><i
 										class="fa fa-external-link fa-fw"></i>Cadastrar Departamento</a></li>
 								<li><a
 									href="${pageContext.request.contextPath}/unidade/cadastro"><i
@@ -126,12 +137,16 @@
 					<li><a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Relatórios<span
 							class="fa arrow"></span></a>
 						<ul class="nav nav-second-level">
-							<li><a href="#"><i class="fa fa-desktop fa-fw"></i>Relatório
-									por Categorias</a></li>
-							<li><a href="#"><i class="fa fa-external-link fa-fw"></i>Relatório
-									por Departamento</a></li>
-							<li><a href="#"><i class="fa fa-institution fa-fw"></i>Relatório
-									por Unidades</a></li>
+							<li><a
+								href="${pageContext.request.contextPath}/relatorio/categoria"><i
+									class="fa fa-desktop fa-fw"></i>Relatório por Categorias</a></li>
+							<li><a
+								href="${pageContext.request.contextPath}/relatorio/departamento"><i
+									class="fa fa-external-link fa-fw"></i>Relatório por
+									Departamento</a></li>
+							<li><a
+								href="${pageContext.request.contextPath}/relatorio/unidade"><i
+									class="fa fa-institution fa-fw"></i>Relatório por Unidades</a></li>
 						</ul> <!-- /.nav-second-level --></li>
 					</ul>
 				</div>
@@ -143,7 +158,7 @@
 		<div id="page-wrapper">
 			<div class="row">
 				<div class="col-lg-12">
-					<h1 class="page-header">Visualizar Item Especifico</h1>
+					<h1 class="page-header">Relatório por Categoria</h1>
 				</div>
 			</div>
 
@@ -152,68 +167,26 @@
 					<div class="panel panel-green">
 						<div class="panel-heading">Pesquisa de Itens</div>
 						<div class="panel-body">
-
-							<label>Nome do item</label>
-							<div class="form-group input-group">
-								<input type="text" class="form-control"
-									placeholder="Digite o nome de um item para busca"> <span
-									class="input-group-btn">
-									<button class="btn btn-default" type="button">
+							<form:form
+								action="${pageContext.request.contextPath}/relatorio/envio"
+								commandname="categoria" modelAttribute="categoria">
+								<label>Nome da categoria</label>
+								<div class="form-group input-group">
+									<form:select path="nomeCategoria">
+										<c:forEach var="categoria" items="${categorias}">
+											<option class="form-control"
+												placeholder="Digite o nome de uma categoria para busca"
+												name="nome"><span class="input-group-btn"
+													value="${categoria.nomeCategoria}">${categoria.nomeCategoria}</option>
+										</c:forEach>
+									</form:select>
+									<button class="btn btn-default" type="submit">
 										<i class="fa fa-search"></i>
 									</button>
-								</span>
-							</div>
-
-							<label>Código do item</label>
-							<div class="form-group input-group">
-								<input type="number" class="form-control"
-									placeholder="Digite um código para busca"> <span
-									class="input-group-btn">
-									<button class="btn btn-default" type="button">
-										<i class="fa fa-search"></i>
-									</button>
-								</span>
-							</div>
-
-							<label>Numero da plaqueta</label>
-							<div class="form-group input-group">
-								<input type="number" class="form-control"
-									placeholder="Digite o número da plaqueta para busca"> <span
-									class="input-group-btn">
-									<button class="btn btn-default" type="button">
-										<i class="fa fa-search"></i>
-									</button>
-								</span>
-							</div>
-
-							<form role="form">
-
-								<div class="form-group">
-									<label>Categoria</label> <select class="form-control">
-										<option>Todas</option>
-										<option>Eletronico</option>
-										<option>Mobilia</option>
-
-									</select>
+									</span>
 								</div>
-								<div class="form-group">
-									<label>Unidade</label> <select class="form-control">
-										<option>Todas</option>
-										<option>Goiânia - Setor Sul</option>
-										<option>Goiânia - T10</option>
-										<option>Anápolis</option>
 
-									</select>
-								</div>
-								<div class="form-group">
-									<label>Departamento</label> <select class="form-control">
-										<option>Todas</option>
-										<option>Financeiro</option>
-										<option>Assistência</option>
-										<option>Salão</option>
-									</select>
-								</div>
-							</form>
+							</form:form>
 						</div>
 					</div>
 				</div>
@@ -226,11 +199,33 @@
 						<div class="panel-body">
 							<div class="row">
 								<div class="col-md-12">
-									<form role="form">
-										<button type="submit" class="btn btn-outline btn-success">Buscar</button>
-										<button type="reset" class="btn btn-outline btn-warning">Limpar</button>
-										<button type="submit" class="btn btn-outline btn-danger">Apagar</button>
-									</form>
+
+
+
+									<c:if test="${itens!=null }">
+									     Total de itens: ${quantidades}
+										<c:forEach var="item" items="${itens}">
+											<div class="alert alert-info fade in">
+												<a href="#" class="close" data-dismiss="alert"
+													aria-label="close">&times;</a> <strong>Nome do
+													produto: ${item.produto.nomeProduto}</strong><br><br> Codigo do
+												item: ${item.codigo}<br> Codigo do produto:
+												${item.produto.codigo}<br> Fabricante:
+												${item.produto.fabricante.nomeFabricante}<br> Numeroa
+												da plaqueta: ${item.numeroPlaqueta}<br> Data de compra:
+												${item.dataDeCompra}<br> Unidade:
+												${item.unidade.nomeUnidade }<br> Departamento:
+												${item.departamento.nomeDepartamento}<br> Quantidade de
+												itens: ${item.quantidade}<br>
+												<span style="display:none">"${item.id}"</span><br>
+												<button><a href="${pageContext.request.contextPath}/item/delete/${item.id}.html">Deletar</a></button>
+											    <button><a href="${pageContext.request.contextPath}/item/edita/${item.id}.html">Editar</a></button>
+
+											</div>
+										</c:forEach>
+
+									</c:if>
+
 								</div>
 							</div>
 						</div>

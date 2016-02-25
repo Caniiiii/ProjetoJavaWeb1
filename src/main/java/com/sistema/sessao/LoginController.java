@@ -16,6 +16,15 @@ public class LoginController {
 
 	@Autowired
 	UsuarioService usuarioService;
+	
+	
+	@RequestMapping("/usuario/login")
+	  public ModelAndView loginForm() {
+		ModelAndView mdv = new ModelAndView("login");
+		mdv.addObject("usuario", new Usuario());
+	    return mdv;
+	  }
+
 
 	@RequestMapping(value = "/usuario/efetuarLogin")
 	public ModelAndView LoginPage(@ModelAttribute Usuario usuario, HttpSession sessao) {
@@ -27,7 +36,7 @@ public class LoginController {
 			String message = "Seja bem vindo, "+user.getUserName()+"!";
 			modelAndView.addObject("message", message);
 
-			sessao.setAttribute("usuarioLogado", true);
+			sessao.setAttribute("usuarioLogado", usuario);
 
 			return modelAndView;
 		}

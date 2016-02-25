@@ -116,11 +116,11 @@ public class Item {
 		this.situacao = situacao;
 	}
 
-	public Unidade getUnidades() {
+	public Unidade getUnidade() {
 		return unidade;
 	}
 
-	public void setUnidades(Unidade unidade) {
+	public void setUnidade(Unidade unidade) {
 		this.unidade = unidade;
 	}
 
