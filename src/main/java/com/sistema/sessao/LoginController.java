@@ -18,7 +18,7 @@ public class LoginController {
 	UsuarioService usuarioService;
 	
 	
-	@RequestMapping("/usuario/login")
+	@RequestMapping("loginUsuario")
 	  public ModelAndView loginForm() {
 		ModelAndView mdv = new ModelAndView("login");
 		mdv.addObject("usuario", new Usuario());

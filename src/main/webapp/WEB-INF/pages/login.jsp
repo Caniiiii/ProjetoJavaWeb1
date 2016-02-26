@@ -74,7 +74,7 @@
 
 										<div class="form-group">
 											<form:form
-												action="${pageContext.request.contextPath}/usuario/efetuarLogin.html"
+												action="${pageContext.request.contextPath}/usuario/efetuarLogin"
 												method="POST" commandname="usuario" modelAttribute="usuario">
 												<form:input type="text" id="un_1" class="form-control"
 													placeholder="Usuario" required="required" path="userName"></form:input>

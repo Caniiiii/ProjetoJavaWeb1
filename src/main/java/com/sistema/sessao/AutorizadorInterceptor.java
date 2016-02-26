@@ -3,6 +3,7 @@ package com.sistema.sessao;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
@@ -13,7 +14,7 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 	      Object controller) throws Exception {
 
 	      String uri = request.getRequestURI();
-	      if(uri.endsWith("/usuario/login") || 
+	      if(uri.endsWith("loginUsuario") || 
 	          uri.endsWith("/usuario/efetuarLogin") || 
 	              uri.contains("resources")){
 	        return true;
@@ -23,7 +24,7 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 	        return true;
 	      }
 	      
-	      response.sendRedirect("/usuario/login");
+	      response.sendRedirect("loginUsuario");
 	      return false;
 	
 }
